@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-
-"""shape of matrix
+"""
+shape of matrix
 """
 def matrix_shape(matrix):
     shape = []
