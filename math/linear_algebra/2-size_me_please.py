@@ -2,6 +2,8 @@
 """
 shape of matrix
 """
+
+
 def matrix_shape(matrix):
     """_summary_
 
