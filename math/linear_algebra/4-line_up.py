@@ -5,7 +5,15 @@
 
 
 def add_arrays(arr1, arr2):
+    """_summary_
 
+    Args:
+        arr1 (_type_): _description_
+        arr2 (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     if len(arr1) != len(arr2):
         return None
     else:
