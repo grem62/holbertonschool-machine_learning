@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+"""shape of matrix
+"""
 def matrix_shape(matrix):
     shape = []
     while type(matrix) == list:
