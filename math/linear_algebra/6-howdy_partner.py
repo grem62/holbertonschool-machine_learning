@@ -14,5 +14,5 @@ def cat_arrays(arr1, arr2):
     Returns:
         _type_: _description_
     """
-    new_array = [(arr1) + (arr2)]
+    new_array = (arr1) + (arr2)
     return new_array
