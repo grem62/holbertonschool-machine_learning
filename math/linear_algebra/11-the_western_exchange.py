@@ -11,5 +11,4 @@ def np_transpose(matrix):
     Args:
         matrix (_type_): _description_
     """
-    transposed_matrix = np.transpose(matrix)
-    return transposed_matrix
+    return matrix.transpose()
