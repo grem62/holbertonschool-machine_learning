@@ -4,16 +4,19 @@ calculate integral polynomial
 """
 
 
-def poly_integral(poly, c=0):
+def poly_integral(poly, C=0):
+    """
+    arguments: poly, C
+    """
     if type(poly) is not list:
         return None
-    if type(c) is not int:
+    if type(C) is not int:
         return None
     n = len(poly)
     if n == 0:
         return None
 
-    integral = [c]
+    integral = [C]
 
     for i in range(n):
         integral.append(poly[i] / (i + 1))
