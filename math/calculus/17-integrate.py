@@ -19,6 +19,13 @@ def poly_integral(poly, C=0):
     integral = [C]
 
     for i in range(n):
-        integral.append(poly[i] / (i + 1))
+        calcul = poly[i] / (i + 1)
+        if isinstance(calcul, float):
+            if calcul.is_integer():
+                integral.append(int(calcul))
+            else:
+                integral.append(round(calcul, 2))
+        else:
+            integral.append(int(calcul))
 
     return integral
