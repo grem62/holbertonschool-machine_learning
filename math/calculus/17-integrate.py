@@ -26,7 +26,7 @@ def poly_integral(poly, C=0):
             if calcul.is_integer():
                 integral.append(int(calcul))
             else:
-                integral.append(round(calcul, 2))
+                integral.append(round(calcul, 7))
         else:
             integral.append(int(calcul))
 
