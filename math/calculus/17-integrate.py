@@ -3,23 +3,31 @@
 calculate integral polynomial
 """
 
+
 def poly_integral(poly, C=0):
-    if not isinstance(poly, list) or not all(isinstance(coeff, (int, float)) for coeff in poly) or not isinstance(C, int):
+    """
+    arguments: poly, C
+    """
+    if type(poly) is not list:
+        return None
+    if poly == []:
+        return None
+    if type(C) is not int:
+        return None
+    n = len(poly)
+    if n == 0:
         return None
 
     integral = [C]
 
-    for i, coeff in enumerate(poly):
-        power = i + 1
-        term = coeff / power
-
-        if term.is_integer():
-            integral.append(int(term))
+    for i in range(n):
+        calcul = poly[i] / (i + 1)
+        if isinstance(calcul, float):
+            if calcul.is_integer():
+                integral.append(int(calcul))
+            else:
+                integral.append(round(calcul, 2))
         else:
-            integral.append(term)
-
-    # Remove trailing zeros
-    while integral and integral[-1] == 0:
-        integral.pop()
+            integral.append(int(calcul))
 
     return integral
