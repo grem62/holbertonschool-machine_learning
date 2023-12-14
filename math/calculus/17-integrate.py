@@ -14,6 +14,8 @@ def poly_integral(poly, C=0):
         return None
     if type(C) is not int:
         return None
+    if poly == [0]:
+        return C
     n = len(poly)
     if n == 0:
         return None
