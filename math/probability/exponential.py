@@ -34,7 +34,7 @@ class Exponential:
         """
         if x < 0:
             return 0
-        
+
         Exponential = 2.7182818285
 
         pdf_value = self.lambtha * (Exponential ** (-self.lambtha * x))

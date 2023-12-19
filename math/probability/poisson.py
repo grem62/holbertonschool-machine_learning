@@ -39,7 +39,7 @@ class Poisson:
         if k == 0:
             return 1
         return k * self.factorial(k - 1)
-    
+
     def pmf(self, k):
         """_summary_
 
