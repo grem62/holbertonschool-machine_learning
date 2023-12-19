@@ -76,9 +76,8 @@ class Normal:
             _type_: _description_
         """
         pi = 3.1415926536
-        erf_value = 2 / (pi ** 0.5) * (x - (x ** 3) / (
-            3 + (x ** 5) / 10 - (x ** 7) / 42 + (x ** 9) / 216)
-        )
+        erf_value = 2 / (pi ** 0.5) * \
+    (x - (x ** 3) / 3 + (x ** 5) / 10 - (x ** 7) / 42 + (x ** 9) / 216)
         return erf_value
 
     def cdf(self, x):
@@ -90,7 +89,6 @@ class Normal:
         Returns:
             _type_: _description_
         """
-        cdf_value = (1 + self.erf((x - self.mean) / (
-            (self.stddev * (2 ** 0.5)))) / 2
-        )
+        cdf_value = (1 + self.erf((x - self.mean) / \
+                (self.stddev * (2 ** 0.5)))) / 2
         return cdf_value
