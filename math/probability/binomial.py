@@ -77,3 +77,18 @@ class Binomial:
         if k == 0:
             return 1
         return k * self.factoriel(k - 1)
+
+    def cdf(self, k):
+        """_summary_
+
+        Args:
+            k (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
+        if k is not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+        return sum(self.pmf(i) for i in range(k + 1))
