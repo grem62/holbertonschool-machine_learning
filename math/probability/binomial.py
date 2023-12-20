@@ -1,3 +1,17 @@
+#!/usr/bin/env python3
+"""_summary_
+
+    Raises:
+        ValueError: _description_
+        ValueError: _description_
+        TypeError: _description_
+        ValueError: _description_
+
+    Returns:
+        _type_: _description_
+"""
+
+
 class Binomial:
     def __init__(self, data=None, n=1, p=0.5):
         """_summary_
