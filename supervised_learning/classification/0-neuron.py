@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+module numpy
+"""
 import numpy as np
 
 """
@@ -17,7 +20,7 @@ class Neuron:
         """
         if type(nx) is not int:
             raise TypeError("nx must be an integer")
-        if nx < 1:
+        if nx < 0:
             raise TypeError("nx must be a positive integer")
 
         self.W = np.random.normal(size=(1, nx))
