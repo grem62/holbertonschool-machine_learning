@@ -92,12 +92,29 @@ class NeuralNetwork:
         return self.__A2
 
     def forward_prop(self, X):
+        """_summary_
+
+        Args:
+            X (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         self.__A1 = 1 / (1 + np.exp(-(np.matmul(self.__W1, X) + self.__b1)))
         self.__A2 = 1 / \
             (1 + np.exp(-(np.matmul(self.__W2, self.__A1) + self.__b2)))
         return self.__A1, self.__A2
 
     def cost(self, Y, A):
+        """_summary_
+
+        Args:
+            Y (_type_): _description_
+            A (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         m = Y.shape[1]
         cost = -(1 / m) * np.sum(Y * np.log(A) +
                                  (1 - Y) * np.log(1.0000001 - A))
