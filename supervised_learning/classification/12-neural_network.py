@@ -104,6 +104,15 @@ class NeuralNetwork:
         return cost
 
     def evaluate(self, X, Y):
+        """_summary_
+
+        Args:
+            X (_type_): _description_
+            Y (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         self.forward_prop(X)
         cost = self.cost(Y, self.__A2)
         A = np.where(self.__A2 >= 0.5, 1, 0)
