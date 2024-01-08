@@ -35,7 +35,7 @@ class DeepNeuralNetwork:
         self.weights = {}
 
         for i in range(1, self.L + 1):
-            if layers[i - 1] < 1 or type(layers[i - 1]) is not int:
+            if layers[i - 1] < 1 or type(layers[i - 1]) is not list:
                 raise TypeError('layers must be a list of positive integers')
             key_W = 'W' + str(i)
             key_b = 'b' + str(i)
