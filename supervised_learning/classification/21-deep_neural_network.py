@@ -110,7 +110,7 @@ class DeepNeuralNetwork:
         m = Y.shape[1]
         dz = cache['A' + str(self.L)] - Y
         for i in range(self.L, 0, -1):
-            dw = (1 / m) * np.matmul(dz, cache['A' + str(i - 1)].T) 
+            dw = (1 / m) * np.matmul(dz, cache['A' + str(i - 1)].T)
             db = (1 / m) * np.sum(dz, axis=1, keepdims=True)
             dz = np.matmul(self.weights['W' + str(i)].T, dz) * (
                 cache['A' + str(i - 1)] * (1 - cache['A' + str(i - 1)]))
