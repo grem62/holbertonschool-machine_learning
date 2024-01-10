@@ -119,7 +119,8 @@ class DeepNeuralNetwork:
             self.__weights['W' + str(i)] -= alpha * dw
             self.__weights['b' + str(i)] -= alpha * db
 
-    def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True, graph=True, step=100):
+    def train(self, X, Y, iterations=5000, alpha=0.05,
+              verbose=True, graph=True, step=100):
         """_summary_
 
         Args:
@@ -178,7 +179,7 @@ class DeepNeuralNetwork:
         """
         if type(filename) is not str:
             return None
-        if filename != '.pkl':
+        if filename[-4:] != '.pkl':
             filename = filename + '.pkl'
         with open(filename, 'wb') as file:
             pickle.dump(self, file)
