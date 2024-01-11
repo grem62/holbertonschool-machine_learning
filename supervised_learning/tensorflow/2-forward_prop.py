@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """
-
+_summary_
 """
+import tensorflow.compat.v1 as tf
 create_layer = __import__('1-create_layer').create_layer
+"""_summary_
+"""
 
 
 def forward_prop(x, layer_sizes=[], activations=[]):
@@ -20,5 +23,5 @@ def forward_prop(x, layer_sizes=[], activations=[]):
         if i == 0:
             pred = create_layer(x, layer_sizes[0], activations[0])
         else:
-            pred = create_layer(pred, layer_sizes[i], activations[i])
+            pred = create_layer(prediction, layer_sizes[i], activations[i])
         return pred
