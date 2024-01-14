@@ -14,12 +14,13 @@ class DeepNeuralNetwork:
     Class DeepNeuralNetwork that defines a deep neural network performing
     multiclass classification
     """
-    def __init__(self, nx, layers):
+    def __init__(self, nx, layers, activation='sig'):
         """
         Initializesd the deep neural network object
         Argument:
             nx (int): number of input features to the deep neural network
             layers (int): number of layers in the deep neural network
+            activation (str): represents the type of activation function
         """
         # Check if nx is an integer
         if type(nx) is not int:
@@ -32,6 +33,10 @@ class DeepNeuralNetwork:
         # Check if layers is not a list or if it is an empty list
         if type(layers) is not list or len(layers) == 0:
             raise TypeError("layers must be a list of positive integers")
+
+        # Check if activation is a sigmoid function or a tangent function
+        if activation not in ['sig', 'tanh']:
+            raise ValueError("activation must be 'sig' or 'tanh'")
 
         # Initialize L
         # L represents the number of layers in the neural network
@@ -47,8 +52,11 @@ class DeepNeuralNetwork:
         # Initialize empty dictionary to hold weights and biases
         self.__weights = {}
 
+        # Initialize activation function
+        self.__activation = activation
+
         # Loop through the layers of the neural network
-        for i in range(self.L):
+        for i in range(self.__L):
             # Check if the type of the current element in layers is not an
             # integer or if it is a negative integer
             if type(layers[i]) != int or layers[i] < 0:
@@ -92,6 +100,14 @@ class DeepNeuralNetwork:
         """
         return self.__weights
 
+    @property
+    def activation(self):
+        """
+        Getter function for activation
+        Returns activation
+        """
+        return self.__activation
+
     def forward_prop(self, X):
         """
         Calculates the forward propagation of the neural network
@@ -105,16 +121,16 @@ class DeepNeuralNetwork:
         self.__cache["A0"] = X
 
         # Iterate over the layers of the network
-        for layer_idx in range(self.L):
+        for i in range(self.L):
             # Create a key to retrieve the output of the previous layer from
             # the cache
-            input_key = "A" + str(layer_idx)
+            input_key = "A" + str(i)
             # Create a key to retrieve the weights of the current layer from
             # the network's weights
-            weight_key = "W" + str(layer_idx + 1)
+            weight_key = "W" + str(i + 1)
             # Create a key to retrieve the biases of the current layer from
             # the network's biases
-            bias_key = "b" + str(layer_idx + 1)
+            bias_key = "b" + str(i + 1)
 
             # Calculate the weighted sum of the inputs of the current layer
             # using weights and biases
@@ -124,15 +140,18 @@ class DeepNeuralNetwork:
             ) + self.weights.get(bias_key)
 
             # If it's the output layer
-            if layer_idx == self.L - 1:
+            if i == self.L - 1:
                 # Apply the softmax function to obtain class probabilities
                 A = np.exp(z) / np.sum(np.exp(z), axis=0, keepdims=True)
             else:
-                # For hidden layers, apply the sigmoid activation function
-                A = 1 / (1 + np.exp(-z))
+                if self.activation == "sig":
+                    # For hidden layers, apply the sigmoid activation function
+                    A = 1 / (1 + np.exp(-z))
+                else:
+                    A = (np.exp(z) - np.exp(-z)) / (np.exp(z) + np.exp(-z))
 
             # Record output of the current layer in the cache for future use
-            self.__cache["A" + str(layer_idx + 1)] = A
+            self.__cache["A" + str(i + 1)] = A
 
         # Return the output of the final layer and the cache containing the
         # outputs of each layer
@@ -191,25 +210,42 @@ class DeepNeuralNetwork:
         """
         # Compute the number of examples
         m = Y.shape[1]
-
         # Compute the derivative of the output of the neural network
         dz = cache["A" + str(self.__L)] - Y
 
-        # Loop through the layers of the neural network in reverse order
-        for i in range(self.__L, 0, -1):
-            # Compute the derivative of the weights at each layer
-            dw = np.matmul(dz, cache["A" + str(i - 1)].T) / m
+        # Update the weights and biases using backpropagation
+        for i in reversed(range(1, self.L + 1)):
+            # Construct keys for weights, biases and previous layer activations
+            current_weight_key = "W" + str(i)
+            current_bias_key = "b" + str(i)
+            previous_layer_activations_key = "A" + str(i - 1)
 
-            # Compute the derivative of the biases at each layer
-            db = np.sum(dz, axis=1, keepdims=True) / m
+            # Retrieve weights, biases, and previous layer activations
+            current_weight = self.weights.get(current_weight_key)
+            current_bias = self.weights.get(current_bias_key)
+            previous_layer_activations = self.cache.get(
+                previous_layer_activations_key)
 
-            # Compute the derivative of the output of the previous layer
-            dz = np.matmul(self.__weights["W" + str(i)].T, dz) * (
-                cache["A" + str(i - 1)] * (1 - cache["A" + str(i - 1)]))
+            # Compute gradients for the current layer
+            dw = np.matmul(dz, previous_layer_activations.T) / m  # Weight grad
+            db = np.sum(dz, axis=1, keepdims=True) / m  # Bias gradient
 
-            # Update the weights and biases of the network
-            self.__weights["W" + str(i)] -= alpha * dw
-            self.__weights["b" + str(i)] -= alpha * db
+            # Update weights and biases using gradient descent
+            self.__weights[current_weight_key] = current_weight - alpha * dw
+            self.__weights[current_bias_key] = current_bias - alpha * db
+
+            # If not the input layer, compute gradient for the next layer
+            if i > 1:
+                # Use the appropriate activation function for backpropagation
+                if self.activation == "sig":
+                    dz = np.matmul(
+                        current_weight.T, dz
+                    ) * previous_layer_activations * (
+                        1 - previous_layer_activations)
+                else:
+                    dz = np.matmul(
+                        current_weight.T, dz
+                    ) * (1 - previous_layer_activations**2)
 
     def train(self, X, Y, iterations=5000, alpha=0.05, verbose=True,
               graph=True, step=100):
