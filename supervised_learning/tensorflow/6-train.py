@@ -28,13 +28,13 @@ def train(X_train, Y_train, X_valid,
     """
     calculate_accuracy = __import__('3-calculate_accuracy').calculate_accuracy
     calculate_loss = __import__('4-calculate_loss').calculate_loss
-    create_placehold = __import__('0-create_placeholders').create_placeholders
+    create_placeholders = __import__('0-create_placeholders').create_placeholders
     create_train_op = __import__('5-create_train_op').create_train_op
     forward_prop = __import__('2-forward_prop').forward_prop
 
     tf.disable_v2_behavior()
 
-    x, y = create_placehold(X_train.shape[1], Y_train.shape[1])
+    x, y = create_placeholders(X_train.shape[1], Y_train.shape[1])
     y_pred = forward_prop(x, layer_sizes, activations)
     loss = calculate_loss(y, y_pred)
     accuracy = calculate_accuracy(y, y_pred)
