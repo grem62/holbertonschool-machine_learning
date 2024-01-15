@@ -4,9 +4,6 @@
 
 
 import numpy as np
-import tensorflow as tf
-
-tf.compat.v1.disable_v2_behavior()
 
 
 def normalization_constants(X):
