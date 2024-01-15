@@ -15,6 +15,5 @@ def shuffle_data(X, Y):
         X (_type_): _description_
         Y (_type_): _description_
     """
-    Matrice1 = np.random.permutation(X)
-    Matrice2 = np.random.permutation(Y)
-    return Matrice1, Matrice2
+    shuff = np.random.permutation(X.shape[0])
+    return X[shuff], Y[shuff]
