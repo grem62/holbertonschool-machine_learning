@@ -17,11 +17,3 @@ def create_momentum_op(loss, alpha, beta1):
         _type_: _description_
     """
     return tf.train.MomentumOptimizer(alpha, momentum=beta1).minimize(loss)
-
-
-
-    
-
-
-
-
