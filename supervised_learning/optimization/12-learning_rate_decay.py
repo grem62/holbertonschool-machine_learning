@@ -4,6 +4,7 @@
 import tensorflow.compat.v1 as tf
 """_summary_"""
 
+
 def learning_rate_decay(alpha, decay_rate, global_step, decay_step):
     """_summary_"""
     learning_rate_decay = tf.train.inverse_time_decay(learning_rate=alpha,
