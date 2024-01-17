@@ -4,6 +4,7 @@ import tensorflow.compat.v1 as tf
 
 shuffle_data = __import__('2-shuffle_data').shuffle_data
 
+
 def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
                      batch_size=32, epochs=5, load_path="/tmp/model.ckpt",
                      save_path="/tmp/model.ckpt"):
@@ -19,10 +20,14 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
 
         for epoch in range(epochs + 1):
             # Evaluate the training cost and accuracy of the model
-            training_cost = sess.run(loss, feed_dict={x: X_train, y: Y_train})
-            training_accuracy = sess.run(accuracy, feed_dict={x: X_train, y: Y_train})
-            validation_cost = sess.run(loss, feed_dict={x: X_valid, y: Y_valid})
-            validation_accuracy = sess.run(accuracy, feed_dict={x: X_valid, y: Y_valid})
+            training_cost = sess.run(loss,
+                                     feed_dict={x: X_train, y: Y_train})
+            training_accuracy = sess.run(accuracy,
+                                         feed_dict={x: X_train, y: Y_train})
+            validation_cost = sess.run(loss,
+                                       feed_dict={x: X_valid, y: Y_valid})
+            validation_accuracy = sess.run(accuracy,
+                                           feed_dict={x: X_valid, y: Y_valid})
 
             print(f"After {epoch} epochs:")
             print(f"\tTraining Cost: {training_cost}")
