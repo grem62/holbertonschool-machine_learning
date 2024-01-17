@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""_summary_"""
 
 import tensorflow.compat.v1 as tf
 """_summary_
@@ -25,8 +26,10 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         Y_valid (_type_): _description_
         batch_size (int, optional): _description_. Defaults to 32.
         epochs (int, optional): _description_. Defaults to 5.
-        load_path (str, optional): _description_. Defaults to "/tmp/model.ckpt".
-        save_path (str, optional): _description_. Defaults to "/tmp/model.ckpt".
+        load_path (str, optional): _description_.
+        Defaults to "/tmp/model.ckpt".
+        save_path (str, optional): _description_.
+        Defaults to "/tmp/model.ckpt".
 
     Returns:
         _type_: _description_
