@@ -59,6 +59,9 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
             print(f"\tValidation Cost: {validation_cost}")
             print(f"\tValidation Accuracy: {validation_accuracy}")
 
+            if epoch == epochs:
+                return saver.save(sess, save_path)
+
 
             for i in range(0, len(X_train), batch_size):
                 X_batch = X_train[i:i+batch_size]
