@@ -40,8 +40,25 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         loss = tf.get_collection('loss')[0]
         train_op = tf.get_collection('train_op')[0]
 
-        for epoch in range(epochs):
-            X_train, Y_train = shuffle_data(X_train, Y_train)
+        for epoch in range(epochs + 1):
+            # Evaluate the training cost and accuracy of the model
+            training_cost = sess.run(loss,
+                                        feed_dict={x: X_train, y: Y_train})
+            training_accuracy = sess.run(accuracy,
+                                            feed_dict={x: X_train,
+                                                       y: Y_train})
+            validation_cost = sess.run(loss,
+                                          feed_dict={x: X_valid, y: Y_valid})
+            validation_accuracy = sess.run(accuracy,
+                                              feed_dict={x: X_valid,
+                                                         y: Y_valid})
+
+            print(f"After {epoch} epochs:")
+            print(f"\tTraining Cost: {training_cost}")
+            print(f"\tTraining Accuracy: {training_accuracy}")
+            print(f"\tValidation Cost: {validation_cost}")
+            print(f"\tValidation Accuracy: {validation_accuracy}")
+
 
             for i in range(0, len(X_train), batch_size):
                 X_batch = X_train[i:i+batch_size]
@@ -57,17 +74,6 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
                     print(f"\tCost: {step_cost}")
                     print(f"\tAccuracy: {step_accuracy}")
 
-            train_cost, train_accuracy = sess.run([loss, accuracy],
-                                                  feed_dict={x: X_train,
-                                                             y: Y_train})
-            valid_cost, valid_accuracy = sess.run([loss, accuracy],
-                                                  feed_dict={x: X_valid,
-                                                             y: Y_valid})
-            print(f"After {epoch+1} epochs:")
-            print(f"\tTraining Cost: {train_cost}")
-            print(f"\tTraining Accuracy: {train_accuracy}")
-            print(f"\tValidation Cost: {valid_cost}")
-            print(f"\tValidation Accuracy: {valid_accuracy}")
 
         saver.save(sess, save_path)
         return save_path
