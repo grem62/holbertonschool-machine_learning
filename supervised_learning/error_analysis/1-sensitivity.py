@@ -17,5 +17,5 @@ def sensitivity(confusion):
     """
     sensitiv = np.zeros(confusion.shape[0])
     for i in range(confusion.shape[0]):
-        sensitiv[i] = confusion[i][i] /  np.sum(confusion[i] + 1e-5)
+        sensitiv[i] = confusion[i][i] /  np.sum(confusion[i] + 1e-4)
     return sensitiv
