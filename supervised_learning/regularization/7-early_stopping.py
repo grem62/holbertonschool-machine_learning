@@ -4,6 +4,18 @@
 
 
 def early_stopping(cost, opt_cost, threshold, patience, count):
+    """_summary_
+
+    Args:
+        cost (_type_): _description_
+        opt_cost (_type_): _description_
+        threshold (_type_): _description_
+        patience (_type_): _description_
+        count (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     early_stopping = True
     # Check if the current cost improvement is greater than the threshold
     if (opt_cost - cost) > threshold:
