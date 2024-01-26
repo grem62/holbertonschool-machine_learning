@@ -4,12 +4,18 @@
 
 
 def early_stopping(cost, opt_cost, threshold, patience, count):
-    stopping = True
-    if (cost - opt_cost) > threshold:
+    early_stopping = True
+    # Check if the current cost improvement is greater than the threshold
+    if (opt_cost - cost) > threshold:
+        # Reset the count as there is improvement
         count = 0
     else:
+        # Increment the count as there is no significant improvement
         count += 1
-
+    # Check if the count has not reached the patience limit
     if count != patience:
-        stopping = False
-    return stopping, count
+        # Continue training, no early stopping
+        early_stopping = False
+
+    # Stop training, early stopping
+    return early_stopping, count
