@@ -5,6 +5,7 @@
 
 import numpy as np
 
+
 def dropout_gradient_descent(Y, weights, cache, alpha, keep_prob, L):
     """
     Function that updates the weights of a neural network
