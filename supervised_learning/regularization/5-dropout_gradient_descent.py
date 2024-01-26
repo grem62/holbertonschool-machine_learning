@@ -50,7 +50,7 @@ def dropout_gradient_descent(Y, weights, cache, alpha, keep_prob, L):
 
         dA = np.matmul(curr_W.T, dZ_curr)
 
-        if l_n - 1 > 0:
+        if l_n - 1 > 1:
             D = cache['D{}'.format(l_n - 1)]
             dA = dA * D
             dA = dA / keep_prob
