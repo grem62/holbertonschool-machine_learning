@@ -5,6 +5,17 @@ import numpy as np
 
 
 def dropout_forward_prop(X, weights, L, keep_prob):
+    """_summary_
+
+    Args:
+        X (_type_): _description_
+        weights (_type_): _description_
+        L (_type_): _description_
+        keep_prob (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     cache = {}
     cache['A0'] = X
     for i in range(1, L + 1):
