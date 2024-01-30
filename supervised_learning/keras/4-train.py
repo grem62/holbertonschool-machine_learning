@@ -18,10 +18,6 @@ def train_model(network, data, labels,
         verbose (bool, optional): _description_. Defaults to True.
         shuffle (bool, optional): _description_. Defaults to False.
     """
-    model = K.Sequential(network)
-    model.compile(optimizer='adam',
-                  loss='categorical_crossentropy', metrics=['accuracy'])
-    model.fit(data, labels,
-              batch_size=batch_size,
-              epochs=epochs, verbose=verbose, shuffle=shuffle)
-    return model
+    history = network.fit(data, labels, batch_size=batch_size,
+                          epochs=epochs, verbose=verbose, shuffle=shuffle)
+    return history
