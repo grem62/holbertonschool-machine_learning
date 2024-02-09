@@ -10,7 +10,7 @@ import numpy as np
 
 def conv_backward(dZ, A_prev, W, b, padding="same", stride=(1, 1)):
     """_summary_"""
-    
+
     m, h_new, w_new, c_new = dZ.shape
     m, h_prev, w_prev, c_prev = A_prev.shape
     kh, kw, _, _ = W.shape
@@ -26,8 +26,9 @@ def conv_backward(dZ, A_prev, W, b, padding="same", stride=(1, 1)):
     dW = np.zeros_like(W)
     db = np.sum(dZ, axis=(0, 1, 2), keepdims=True)
 
-    A_prev_pad = np.pad(A_prev, ((0, 0), (pad_h, pad_h), (pad_w, pad_w), (0, 0)), mode='constant')
-
+    A_prev_pad = np.pad(A_prev,
+                        ((0, 0), (pad_h, pad_h),
+                         (pad_w, pad_w), (0, 0)), mode='constant')
     for i in range(m):
         a_prev_pad = A_prev_pad[i]
         da_prev_pad = np.zeros_like(a_prev_pad)
@@ -40,9 +41,13 @@ def conv_backward(dZ, A_prev, W, b, padding="same", stride=(1, 1)):
                     horiz_start = w * sw
                     horiz_end = horiz_start + kw
 
-                    a_slice = a_prev_pad[vert_start:vert_end, horiz_start:horiz_end, :]
+                    a_slice = a_prev_pad[vert_start:vert_end,
+                                         horiz_start:horiz_end, :]
 
-                    da_prev_pad[vert_start:vert_end, horiz_start:horiz_end, :] += W[:, :, :, c] * dZ[i, h, w, c]
+                    da_prev_pad[vert_start:vert_end,
+                                horiz_start:horiz_end, :] += W[:, :,
+                                                               :, c] * dZ[i, h,
+                                                                          w, c]
                     dW[:, :, :, c] += a_slice * dZ[i, h, w, c]
 
         if padding == "same":
