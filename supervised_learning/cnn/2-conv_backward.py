@@ -1,6 +1,26 @@
+#!/usr/bin/env python3
+"""_summary_
+
+    Returns:
+        _type_: _description_
+"""
+
 import numpy as np
 
 def conv_backward(dZ, A_prev, W, b, padding="same", stride=(1, 1)):
+    """_summary_
+
+    Args:
+        dZ (_type_): _description_
+        A_prev (_type_): _description_
+        W (_type_): _description_
+        b (_type_): _description_
+        padding (str, optional): _description_. Defaults to "same".
+        stride (tuple, optional): _description_. Defaults to (1, 1).
+
+    Returns:
+        _type_: _description_
+    """
     m, h_new, w_new, c_new = dZ.shape
     m, h_prev, w_prev, c_prev = A_prev.shape
     kh, kw, _, _ = W.shape  # Note: c_prev est redondant ici car déjà défini
