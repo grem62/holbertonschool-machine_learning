@@ -7,55 +7,47 @@
 
 import numpy as np
 
+
 def conv_backward(dZ, A_prev, W, b, padding="same", stride=(1, 1)):
-    """_summary_
-
-    Args:
-        dZ (_type_): _description_
-        A_prev (_type_): _description_
-        W (_type_): _description_
-        b (_type_): _description_
-        padding (str, optional): _description_. Defaults to "same".
-        stride (tuple, optional): _description_. Defaults to (1, 1).
-
-    Returns:
-        _type_: _description_
-    """
+    """_summary_"""
+    
     m, h_new, w_new, c_new = dZ.shape
     m, h_prev, w_prev, c_prev = A_prev.shape
-    kh, kw, _, _ = W.shape  # Note: c_prev est redondant ici car déjà défini
+    kh, kw, _, _ = W.shape
     sh, sw = stride
 
-    # Calcul du padding si nécessaire
     if padding == "same":
-        ph = int(np.ceil(((h_prev - 1) * sh + kh - h_prev) / 2))
-        pw = int(np.ceil(((w_prev - 1) * sw + kw - w_prev) / 2))
+        pad_h = int(np.ceil(((h_prev - 1) * sh + kh - h_prev) / 2))
+        pad_w = int(np.ceil(((w_prev - 1) * sw + kw - w_prev) / 2))
     else:
-        ph, pw = 0, 0
-
-    # Application du padding sur A_prev si nécessaire
-    A_prev_padded = np.pad(A_prev, ((0, 0), (ph, ph), (pw, pw), (0, 0)), 'constant')
+        pad_h, pad_w = 0, 0
 
     dA_prev = np.zeros_like(A_prev)
     dW = np.zeros_like(W)
-    db = np.zeros_like(b)
+    db = np.sum(dZ, axis=(0, 1, 2), keepdims=True)
 
-    # Pour chaque élément dans le volume de sortie
-    for i in range(h_new):
-        for j in range(w_new):
-            for k in range(c_new):
-                # Sélection de la tranche pour dA_prev
-                slice_A = A_prev_padded[:, i * sh:i * sh + kh, j * sw:j * sw + kw, :]
-                # Mise à jour de dA_prev, dW, et db
-                dA_prev[:, i * sh:i * sh + kh, j * sw:j * sw + kw, :] += W[:, :, :, k] * dZ[:, i, j, k][:, None, None, None]
-                dW[:, :, :, k] += np.sum(slice_A * dZ[:, i, j, k][:, None, None, None], axis=0)
-                db[:, :, :, k] += np.sum(dZ[:, i, j, k], axis=0)
+    A_prev_pad = np.pad(A_prev, ((0, 0), (pad_h, pad_h), (pad_w, pad_w), (0, 0)), mode='constant')
 
-    # Ajustement si padding == 'same' pour dA_prev
-    if padding == 'same':
-        if ph != 0:
-            dA_prev = dA_prev[:, ph:-ph, :, :]
-        if pw != 0:
-            dA_prev = dA_prev[:, :, pw:-pw, :]
+    for i in range(m):
+        a_prev_pad = A_prev_pad[i]
+        da_prev_pad = np.zeros_like(a_prev_pad)
+
+        for h in range(h_new):
+            for w in range(w_new):
+                for c in range(c_new):
+                    vert_start = h * sh
+                    vert_end = vert_start + kh
+                    horiz_start = w * sw
+                    horiz_end = horiz_start + kw
+
+                    a_slice = a_prev_pad[vert_start:vert_end, horiz_start:horiz_end, :]
+
+                    da_prev_pad[vert_start:vert_end, horiz_start:horiz_end, :] += W[:, :, :, c] * dZ[i, h, w, c]
+                    dW[:, :, :, c] += a_slice * dZ[i, h, w, c]
+
+        if padding == "same":
+            dA_prev[i, :, :, :] += da_prev_pad[pad_h:-pad_h, pad_w:-pad_w, :]
+        else:
+            dA_prev[i, :, :, :] += da_prev_pad
 
     return dA_prev, dW, db
