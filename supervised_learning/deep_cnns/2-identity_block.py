@@ -23,6 +23,9 @@ def identity_block(A_prev, filters):
                             padding='same', activation='relu')(conv1)
     conv3 = K.layers.Conv2D(filters=F12, kernel_size=(1, 1),
                             padding='same', activation='relu')(conv2)
+    normalisation = K.layers.normalization.BatchNormalization(epsilon=1e-06, mode=0,
+                                                              momentum=0.9,
+                                                              weights=None)(conv3)
 
-    output = K.layers.add([conv3, A_prev])
+    output = K.layers.add([normalisation, A_prev])
     return K.activations.relu(output)
