@@ -1,10 +1,27 @@
-
+#!/usr/bin/env python3
+"""_summary_"""
 
 import tensorflow.keras as K
 
 
 def densenet121(growth_rate=32, compression=1.0):
+    """_summary_
+
+    Args:
+        growth_rate (int, optional): _description_. Defaults to 32.
+        compression (float, optional): _description_. Defaults to 1.0.
+    """
     def dense_block(X, growth_rate, num_layers):
+        """_summary_
+
+        Args:
+            X (_type_): _description_
+            growth_rate (_type_): _description_
+            num_layers (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         for _ in range(num_layers):
             # Batch Normalization
             X = K.layers.BatchNormalization()(X)
@@ -29,6 +46,15 @@ def densenet121(growth_rate=32, compression=1.0):
         return X
 
     def transition_layer(X, compression):
+        """_summary_
+
+        Args:
+            X (_type_): _description_
+            compression (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         # Batch Normalization
         X = K.layers.BatchNormalization()(X)
         # ReLU activation
