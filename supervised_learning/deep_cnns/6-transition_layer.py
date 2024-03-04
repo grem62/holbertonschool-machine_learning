@@ -2,7 +2,7 @@
 """_summary_
 """
 
-import tensorflow as tf
+import tensorflow.keras as K
 
 
 def transition_layer(X, nb_filters, compression):
@@ -17,18 +17,18 @@ def transition_layer(X, nb_filters, compression):
         _type_: _description_
     """
     # Batch Normalization
-    X = tf.keras.layers.BatchNormalization()(X)
+    X = K.layers.BatchNormalization()(X)
 
     # ReLU activation
-    X = tf.keras.layers.Activation('relu')(X)
+    X = K.layers.Activation('relu')(X)
 
     # Convolutional layer
-    X = tf.keras.layers.Conv2D(int(nb_filters * compression),
+    X = K.layers.Conv2D(int(nb_filters * compression),
                                kernel_size=(1, 1),
                                padding='same',
                                kernel_initializer='he_normal')(X)
 
     # Average pooling
-    X = tf.keras.layers.AveragePooling2D(pool_size=(2, 2), strides=(2, 2))(X)
+    X = K.layers.AveragePooling2D(pool_size=(2, 2), strides=(2, 2))(X)
 
     return X, int(nb_filters * compression)
