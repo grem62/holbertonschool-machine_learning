@@ -1,25 +1,31 @@
 #!/usr/bin/env python3
-"""Script to perform transfer learning on CIFAR-10 dataset using ResNet50V2."""
+"""
+Script to perform transfer learning on CIFAR-10 dataset using ResNet152V2
+"""
 
 import tensorflow.keras as K
 import numpy as np
-from keras.datasets import cifar10
-from keras.utils import to_categorical
-from keras.layers import Input, Lambda, Dense, Flatten, MaxPooling2D
-from keras.models import Model
-from keras.layers import GlobalAveragePooling2D
 
 
 def preprocess_data(X, Y):
-    """Preprocesses the CIFAR-10 data."""
+    """
+    Pre-processes the CIFAR-10 data
+    Args:
+        - X: numpy.ndarray of shape (m, 32, 32, 3) containing the CIFAR10 data,
+           where m is the number of data points
+        - Y: numpy.ndarray of shape (m, ) containing the CIFAR-10 labels for X
+    Returns:
+        - X_p: numpy.ndarray containing the preprocessed X (data)
+        - Y_p: numpy.ndarray containing the preprocessed Y (labels)
+    """
     X_p = K.applications.resnet_v2.preprocess_input(X)
-    Y_p = to_categorical(Y, num_classes=10)
+    Y_p = K.utils.to_categorical(Y, num_classes=10)
     return X_p, Y_p
 
 
-def main():
+if __name__ == "__main__":
     # Load CIFAR-10 dataset
-    (X_train, y_train), (X_test, y_test) = cifar10.load_data()
+    (X_train, y_train), (X_test, y_test) = K.datasets.cifar10.load_data()
 
     # Preprocess the data
     X_train, y_train = preprocess_data(X_train, y_train)
@@ -29,52 +35,55 @@ def main():
     input_shape = (32, 32, 3)
 
     # Create a Lambda layer to scale up the data to the correct size
-    input_tensor = Input(shape=input_shape)
-    resize_input = Lambda(lambda image:
-                          K.backend.
-                          resize_images(imagheight_factor=(224 // 32),
-                                        width_factor=(224 // 32),
-                                        data_format="channels_last"))
-    (input_tensor)
+    input_tensor = K.layers.Input(shape=input_shape)
+    resize_input = K.layers.Lambda(
+        lambda image: K.backend.resize_images(image,
+                                              height_factor=(224 // 32),
+                                              width_factor=(224 // 32),
+                                              data_format="channels_last"))(
+                                                  input_tensor)
 
-    # Define ResNet50V2 model
+    # Define ResNet152V2 model
     base_model = K.applications.ResNet50V2(
         include_top=False,
         weights="imagenet",
         input_tensor=resize_input,
-        input_shape=(224, 224, 3),  # Update input shape to match resized image
+        input_shape=(224, 224, 3),
         pooling=None,
-        classes=10,
+        classes=20,
         classifier_activation="softmax",
-    )
+)
 
     # Freeze the layers in the base model
     for layer in base_model.layers:
         layer.trainable = False
 
     # Add custom head
-    x = GlobalAveragePooling2D()(base_model.output)
-    x = Dense(256, activation='relu')(x)
-    output = Dense(10, activation='softmax')(x)
+    x = K.layers.GlobalAveragePooling2D()(base_model.output)
+    x = K.layers.Dense(256,
+                       activation='relu',
+                       kernel_regularizer=K.regularizers.l2(0.001))(x)
+    x = K.layers.Dropout(0.3)(x)
+    output = K.layers.Dense(10, activation='softmax')(x)
 
     # Create the model
-    model = Model(inputs=input_tensor, outputs=output)
+    model = K.models.Model(inputs=input_tensor, outputs=output)
 
     # Compile the model
-    model.compile(optimizer='adam',
+    model.compile(optimizer=K.optimizers.Adam(learning_rate=0.0001),
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 
     # Train the model
-    model.fit(X_train, y_train, batch_size=32, epochs=10, validation_split=0.2)
+    model.fit(X_train,
+              y_train,
+              batch_size=64,
+              epochs=10,
+              validation_split=0.3)
 
     # Evaluate the model
-    _, accuracy = model.evaluate(X_test, y_test)
-    print("Validation accuracy: {:.2f}%".format(accuracy * 100))
+    result = model.evaluate(X_test, y_test)
+    print("Test loss, Test accuracy:", result)
 
     # Save the model
-    model.save('cifar10.h5'.K)
-
-
-if __name__ == "__main__":
-    main()
+    model.save('cifar10.h5')
