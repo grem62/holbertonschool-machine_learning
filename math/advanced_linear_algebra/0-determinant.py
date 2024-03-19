@@ -18,7 +18,7 @@ def determinant(matrix):
 
     # Check if matrix is square and non-empty
     if len(matrix) != len(matrix[0]) or len(matrix) == 0:
-        raise ValueError("matrix must be a non-empty square matrix")
+        raise ValueError("matrix must be a square matrix")
 
     if len(matrix) == 1:
         return matrix[0][0]
