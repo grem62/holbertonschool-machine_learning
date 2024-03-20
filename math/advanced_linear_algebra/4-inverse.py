@@ -94,6 +94,7 @@ def adjugate(matrix):
             adjugate[i].append(cofactors[j][i])
     return adjugate
 
+
 def inverse(matrix):
     """_summary_
 
@@ -107,5 +108,11 @@ def inverse(matrix):
     det = determinant(matrix)
     if det == 0:
         return None
-    inverse_matrix = [[adjugate_matrix[i][j] / det for j in range(len(adjugate_matrix[0]))] for i in range(len(adjugate_matrix))]
+    inverse_matrix = []
+    for i in range(len(adjugate_matrix)):
+        row = []
+        for j in range(len(adjugate_matrix[0])):
+            element = adjugate_matrix[i][j] / det
+            row.append(element)
+        inverse_matrix.append(row)
     return inverse_matrix
