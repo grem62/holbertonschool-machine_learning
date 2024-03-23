@@ -121,6 +121,17 @@ def inverse(matrix):
 
 
 def definiteness(matrix):
+    """_summary_
+
+    Args:
+        matrix (_type_): _description_
+
+    Raises:
+        TypeError: _description_
+
+    Returns:
+        _type_: _description_
+    """
     if not isinstance(matrix, np.ndarray):
         raise TypeError("matrix must be a numpy.ndarray")
 
@@ -134,11 +145,14 @@ def definiteness(matrix):
 
     if positive_eigenvalues == matrix.shape[0]:
         return "Positive definite"
+    
     elif positive_eigenvalues > 0 and zero_eigenvalues > 0:
         return "Positive semi-definite"
     elif negative_eigenvalues > 0 and zero_eigenvalues > 0:
         return "Negative semi-definite"
     elif negative_eigenvalues == matrix.shape[0]:
         return "Negative definite"
-    else:
+    if zero_eigenvalues == matrix.shape[0]:
         return "Indefinite"
+    else:
+        return None
