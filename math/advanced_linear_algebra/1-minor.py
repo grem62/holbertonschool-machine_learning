@@ -13,15 +13,15 @@ def determinant(matrix):
         int: the determinant of matrix
     """
     # Check if matrix is a list of lists and non-empty
-    if not isinstance(
-        matrix, list) or not matrix or not all(
-            isinstance(row, list) for row in matrix):
+    if len(matrix) != len(matrix[0]):
+        raise ValueError("matrix must be a non-empty square matrix")
+    if not isinstance(matrix, list) or not matrix:
         raise TypeError("matrix must be a list of lists")
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError("matrix must be a list of lists")
     if len(matrix) == 1 and len(matrix[0]) == 0:
         return 1
-    # Check if matrix is square and non-empty
-    if len(matrix) != len(matrix[0]):
-        raise ValueError("matrix must be a square matrix")
 
     if len(matrix) == 1:
         return matrix[0][0]
@@ -43,7 +43,15 @@ def minor(matrix):
     Returns:
         int: the minor of matrix
     """
-
+    if len(matrix) == 1 and len(matrix[0]) == 0:
+        raise ValueError("matrix must be a non-empty square matrix")
+    if len(matrix) != len(matrix[0]):
+        raise ValueError("matrix must be a non-empty square matrix")
+    if not isinstance(matrix, list) or not matrix:
+        raise TypeError("matrix must be a list of lists")
+    for row in matrix:
+        if not isinstance(row, list):
+            raise TypeError("matrix must be a list of lists")
     if len(matrix) == 1:
         return [[1]]
     minors = []
