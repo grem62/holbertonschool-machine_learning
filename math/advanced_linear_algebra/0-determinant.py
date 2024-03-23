@@ -13,7 +13,7 @@ def determinant(matrix):
         int: the determinant of matrix
     """
     # Check if matrix is a list of lists and non-empty
-    if not isinstance(matrix, list) or not matrix:
+    if not isinstance(matrix, list) or not matrix or not all(isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a list of lists")
 
     # Check if matrix is square and non-empty
