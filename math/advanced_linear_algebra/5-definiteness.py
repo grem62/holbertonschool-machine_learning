@@ -143,6 +143,8 @@ def definiteness(matrix):
     negative_eigenvalues = np.sum(eigenvalues < 0)
     zero_eigenvalues = np.sum(eigenvalues == 0)
 
+    if len(matrix.shape) != 2 or matrix.shape[0] != matrix.shape[1]:
+        return "None"
     if positive_eigenvalues == matrix.shape[0]:
         return "Positive definite"
     
@@ -152,7 +154,5 @@ def definiteness(matrix):
         return "Negative semi-definite"
     elif negative_eigenvalues == matrix.shape[0]:
         return "Negative definite"
-    if zero_eigenvalues == matrix.shape[0]:
-        return "Indefinite"
     else:
-        return None
+        return "Indefinite"
