@@ -8,7 +8,7 @@ def likelihood(x, n, P):
     """_summary_
 
     Args:
-        x (int): number of patients that develop side effects
+        x (int): numbers of patients that develop side effects
         n (int): total number of patients observed
         P (numpy.ndarray): 1D array containing the various hypothetical
         probabilities of developing side effects
