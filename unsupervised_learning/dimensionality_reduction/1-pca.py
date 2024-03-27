@@ -27,9 +27,8 @@ def pca(X, ndim):
     eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
 
     # Sort eigenvalues and eigenvectors in descending order
-    sorted_indices = np.argsort(eigenvalues)[::-1]
+    sorted_indices = np.argsort(np.abs(eigenvalues))[::-1]
     sorted_eigenvectors = eigenvectors[:, sorted_indices]
-    sorted_eigenvalues = eigenvalues[sorted_indices]
 
     # Select the top ndim eigenvectors
     selected_eigenvectors = sorted_eigenvectors[:, :ndim]
