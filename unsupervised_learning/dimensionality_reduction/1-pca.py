@@ -9,15 +9,16 @@ import numpy as np
 
 
 def pca(X, ndim):
-    """_summary_
+    """Performs PCA on a dataset.
 
     Args:
-        X (_type_): _description_
-        ndim (_type_): _description_
+        X (np.ndarray): Dataset of shape (n, d).
+        ndim (int): Number of dimensions to reduce to.
 
     Returns:
-        _type_: _description_
+        np.ndarray: Transformed dataset of shape (n, ndim).
     """
+    # Center the data
     X_centered = X - np.mean(X, axis=0)
 
     # Compute the covariance matrix
@@ -30,6 +31,7 @@ def pca(X, ndim):
     sorted_indices = np.argsort(np.abs(eigenvalues))[::-1]
     sorted_eigenvectors = eigenvectors[:, sorted_indices]
 
+    # Ensure consistent sign for eigenvectors
     for i in range(ndim):
         if sorted_eigenvectors[0, i] < 0:
             sorted_eigenvectors[:, i] *= -1
