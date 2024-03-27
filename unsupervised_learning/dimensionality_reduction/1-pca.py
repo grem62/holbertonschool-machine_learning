@@ -9,7 +9,15 @@ import numpy as np
 
 
 def pca(X, ndim):
-    # Center the data
+    """_summary_
+
+    Args:
+        X (_type_): _description_
+        ndim (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     X_centered = X - np.mean(X, axis=0)
 
     # Compute the covariance matrix
@@ -21,6 +29,7 @@ def pca(X, ndim):
     # Sort eigenvalues and eigenvectors in descending order
     sorted_indices = np.argsort(eigenvalues)[::-1]
     sorted_eigenvectors = eigenvectors[:, sorted_indices]
+    sorted_eigenvalues = eigenvalues[sorted_indices]
 
     # Select the top ndim eigenvectors
     selected_eigenvectors = sorted_eigenvectors[:, :ndim]
