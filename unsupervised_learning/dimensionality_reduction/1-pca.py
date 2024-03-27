@@ -30,6 +30,10 @@ def pca(X, ndim):
     sorted_indices = np.argsort(np.abs(eigenvalues))[::-1]
     sorted_eigenvectors = eigenvectors[:, sorted_indices]
 
+    for i in range(ndim):
+        if sorted_eigenvectors[0, i] < 0:
+            sorted_eigenvectors[:, i] *= -1
+
     # Select the top ndim eigenvectors
     selected_eigenvectors = sorted_eigenvectors[:, :ndim]
 
