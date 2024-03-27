@@ -20,26 +20,7 @@ def pca(X, ndim):
     """
     # Center the data
     X_centered = X - np.mean(X, axis=0)
-
-    # Compute the covariance matrix
-    cov_matrix = np.cov(X_centered.T)
-
-    # Perform eigendecomposition
-    eigenvalues, eigenvectors = np.linalg.eig(cov_matrix)
-
-    # Sort eigenvalues and eigenvectors in descending order
-    sorted_indices = np.argsort(np.abs(eigenvalues))[::-1]
-    sorted_eigenvectors = eigenvectors[:, sorted_indices]
-
-    # Ensure consistent sign for eigenvectors
-    for i in range(ndim):
-        if sorted_eigenvectors[0, i] < 0:
-            sorted_eigenvectors[:, i] *= -1
-
-    # Select the top ndim eigenvectors
-    selected_eigenvectors = sorted_eigenvectors[:, :ndim]
-
-    # Transform the data
-    T = np.dot(X_centered, selected_eigenvectors)
+    U, S, V = np.linalg.svd(X_centered)
+    T = np.dot(X_centered, V.T[:, :ndim])
 
     return T
