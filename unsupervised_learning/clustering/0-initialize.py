@@ -22,7 +22,7 @@ def initialize(X, k):
         return None
     if type(k) is not int or k <= 0:
         return None
-    
+
     n, d = X.shape
     min_X = np.min(X, axis=0)
     max_X = np.max(X, axis=0)
