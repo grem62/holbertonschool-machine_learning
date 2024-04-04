@@ -20,7 +20,10 @@ def initialize(X, k):
     """
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None
+    if type(k) is not int or k <= 0:
+        return None
+    
     n, d = X.shape
     min_X = np.min(X, axis=0)
     max_X = np.max(X, axis=0)
-    return np.random.uniform(min_X, max_X, (k, d)) or None
+    return np.random.uniform(min_X, max_X, (k, d))
