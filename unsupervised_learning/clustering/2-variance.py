@@ -17,6 +17,9 @@ def variance(X, C):
         float: Total variance.
         # float: Variance totale.
     """
+    if isinstance(X, np.ndarray) is False or len(X.shape) != 2:
+        return None
+        # Si X n'est pas un np.ndarray ou si X n'a pas 2 dimensions
     n, d = X.shape
     # Récupère le nombre de lignes et de colonnes de X
     k, d2 = C.shape
