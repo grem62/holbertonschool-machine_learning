@@ -6,6 +6,7 @@
 """
 
 import numpy as np
+kmeans = __import__('1-kmeans').kmeans
 
 
 def initialize(X, k):
@@ -22,9 +23,12 @@ def initialize(X, k):
         S (numpy.ndarray): The covariance matrix for each cluster,
         initialized as identity matrices.
     """
+    if not isinstance(X, np.ndarray) or len(X.shape) != 2:
+        return None, None, None
+    if not isinstance(k, int) or k <= 0:
+        return None, None, None
     n, d = X.shape
     pi = np.full((k,), 1 / k)
-    m = np.random.uniform(X.min(axis=0), X.max(axis=0), (k, d))
+    m = np.random.uniform(np.min(X, axis=0), np.max(X, axis=0), (k, d))
     S = np.full((k, d, d), np.identity(d))
-
     return pi, m, S
