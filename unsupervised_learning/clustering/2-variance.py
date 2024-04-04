@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""_summary_
+
+    Returns:
+        _type_: _description_
+"""
 
 import numpy as np
 
@@ -18,6 +23,8 @@ def variance(X, C):
         # float: Variance totale.
     """
     if isinstance(X, np.ndarray) is False or len(X.shape) != 2:
+        return None
+    if isinstance(C, np.ndarray) is False or len(C.shape) != 2:
         return None
         # Si X n'est pas un np.ndarray ou si X n'a pas 2 dimensions
     n, d = X.shape
