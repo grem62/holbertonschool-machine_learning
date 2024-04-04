@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""_summary_
+
+    Returns:
+        _type_: _description_
+"""
 
 import numpy as np
 
@@ -13,6 +18,8 @@ def initialize(X, k):
     Returns:
         np.ndarray: Centroids of shape (k, d).
     """
+    if not isinstance(X, np.ndarray) or len(X.shape) != 2:
+        return None
     n, d = X.shape
     min_X = np.min(X, axis=0)
     max_X = np.max(X, axis=0)
