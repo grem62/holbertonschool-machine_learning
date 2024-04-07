@@ -6,7 +6,7 @@ import numpy as np
 
 
 def expectation_maximization(X, k, iterations=1000, tol=1e-5, verbose=False):
-    """Performs the expectation maximization for a GMM."""
+    """Effectue l'espérance-maximisation pour un GMM."""
     initialize = __import__('4-initialize').initialize
     expectation = __import__('6-expectation').expectation
     maximization = __import__('7-maximization').maximization
@@ -25,34 +25,34 @@ def expectation_maximization(X, k, iterations=1000, tol=1e-5, verbose=False):
 
     if not isinstance(verbose, bool):
         return None, None, None, None, None
-    # Initialize the parameters
+    # Initialiser les paramètres
     pi, m, S = initialize(X, k)
 
-    # Initialize the log likelihood
+    # Initialiser la vraisemblance logarithmique
     prev_l = 0
 
     for i in range(iterations):
-        # Expectation step
+        # Étape d'espérance
         g, z = expectation(X, pi, m, S)
 
-        # Maximization step
+        # Étape de maximisation
         pi, m, S = maximization(X, g)
 
-        # Compute the difference in log likelihood
+        # Calculer la différence de vraisemblance logarithmique
         diff = abs(z - prev_l)
 
-        # Print log likelihood if verbose is True
+        # Afficher la vraisemblance logarithmique si verbose est True
         if verbose and i % 10 == 0:
-            print(f"Log Likelihood after {i} iterations: {z:.5f}")
+            print(f"Vraisemblance logarithmique après {i} itérations: {z:.5f}")
 
-        # Check for convergence
+        # Vérifier la convergence
         if diff <= tol:
             break
 
-        # Update the previous log likelihood
+        # Mettre à jour la vraisemblance logarithmique précédente
         prev_l = z
 
     if verbose:
-        print(f"Log Likelihood after {i} iterations: {z:.5f}")
+        print(f"Vraisemblance logarithmique après {i} itérations: {z:.5f}")
 
     return pi, m, S, g, z
