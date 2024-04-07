@@ -1,58 +1,75 @@
 #!/usr/bin/env python3
-"""_summary_
-"""
+""" Expectation Maximization for Gaussian Mixture Model """
 
-import numpy as np
+initialize = __import__('4-initialize').initialize
+expectation = __import__('6-expectation').expectation
+maximization = __import__('7-maximization').maximization
 
 
-def expectation_maximization(X, k, iterations=1000, tol=1e-5, verbose=False):
-    """Effectue l'espérance-maximisation pour un GMM."""
-    initialize = __import__('4-initialize').initialize
-    expectation = __import__('6-expectation').expectation
-    maximization = __import__('7-maximization').maximization
-
+def expectation_maximization(X, num_clusters,
+                             num_iterations=1000,
+                             tolerance=1e-5,
+                             verbose=False):
+    """
+    Performs the Expectation Maximization for a Gaussian Mixture Model
+    Args:
+        - X: np.ndarray (n, d) data set
+            - n: number of data points
+            - d: number of dimensions
+        - num_clusters: positive int, number of clusters
+        - num_iterations: positive int, number of iterations
+        - tolerance: non-negative float, tolerance of log likelihood
+        - verbose: bool for printing information
+    Returns:
+        - pi: np.ndarray (num_clusters,) of priors for each clust
+        - means: np.ndarray (num_clusters, d) of centroid means for each clust
+        - covariances: np.ndarray (num_clusters, d, d) of
+        - covariance matrices for each cluster
+        - probabilities: np.ndarray (num_clusters, n) of
+        - probabilities for each data point in each cluster
+        - log_likelihood: log likelihood of the model
+    """
+    # Input Validation
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None, None, None, None, None
-
-    if not isinstance(k, int) or k <= 0:
+    if not isinstance(num_clusters, int) or num_clusters <= 0:
         return None, None, None, None, None
-
-    if not isinstance(iterations, int) or iterations <= 0:
+    if not isinstance(num_iterations, int) or num_iterations <= 0:
         return None, None, None, None, None
-
-    if not isinstance(tol, float) or tol <= 0:
+    if not isinstance(tolerance, float) or tolerance <= 0:
         return None, None, None, None, None
-
     if not isinstance(verbose, bool):
         return None, None, None, None, None
-    # Initialiser les paramètres
-    pi, m, S = initialize(X, k)
 
-    # Initialiser la vraisemblance logarithmique
-    prev_l = 0
+    # Initialization
+    priors, means, covariances = initialize(X, num_clusters)
+    probabilities, log_likelihood = expectation(X, priors, means, covariances)
 
-    for i in range(iterations):
-        # Étape d'espérance
-        g, z = expectation(X, pi, m, S)
+    # Store the previous log likelihood
+    prev_log_likelihood = 0
 
-        # Étape de maximisation
-        pi, m, S = maximization(X, g)
+    # EM iterations
+    for iteration in range(num_iterations):
+        # Verbose mode: printing log likelihood after every 10 iterations
+        if verbose and iteration % 10 == 0:
+            print('Log Likelihood after {} iterations: {}'.format(
+                iteration, log_likelihood.round(5)))
 
-        # Calculer la différence de vraisemblance logarithmique
-        diff = abs(z - prev_l)
+        # Maximization and Expectation steps
+        priors, means, covariances = maximization(X, probabilities)
+        probabilities, log_likelihood = expectation(
+            X, priors, means, covariances)
 
-        # Afficher la vraisemblance logarithmique si verbose est True
-        if verbose and i % 10 == 0:
-            print(f"Vraisemblance logarithmique après {i} itérations: {z:.5f}")
-
-        # Vérifier la convergence
-        if diff <= tol:
+        # Check convergence
+        if np.abs(log_likelihood - prev_log_likelihood) <= tolerance:
             break
 
-        # Mettre à jour la vraisemblance logarithmique précédente
-        prev_l = z
+        # Update previous log likelihood
+        prev_log_likelihood = log_likelihood
 
+    # Final log likelihood
     if verbose:
-        print(f"Vraisemblance logarithmique après {i} itérations: {z:.5f}")
+        print('Log Likelihood after {} iterations: {}'.format(
+            iteration+1, log_likelihood.round(5)))
 
-    return pi, m, S, g, z
+    return priors, means, covariances, probabilities, log_likelihood
