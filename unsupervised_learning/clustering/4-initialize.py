@@ -32,7 +32,7 @@ def initialize(X, k):
     priors = np.full(shape=(k,), fill_value=1/k)
     # Initialize the mean for each cluster (m) using K-means
     means = kmeans(X, k)[0]
-    # Initialize the covariance matrices for each cluster
+    # Initialize the covariance matrices each cluster
     # (S) as identity matrices
     covariances = np.full(shape=(k, d, d), fill_value=np.identity(d))
     return priors, means, covariances
