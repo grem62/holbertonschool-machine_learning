@@ -1,80 +1,68 @@
 #!/usr/bin/env python3
-""" Expectation Maximization for Gaussian Mixture Model """
-
+""" expectation maximization for a GMM """
 import numpy as np
 initialize = __import__('4-initialize').initialize
 expectation = __import__('6-expectation').expectation
 maximization = __import__('7-maximization').maximization
 
 
-def expectation_maximization(X,
-                             num_clusters,
-                             iterations=1000,
-                             tolerance=1e-5,
-                             verbose=False):
+def expectation_maximization(X, k, iterations=1000, tol=1e-5, verbose=False):
     """
-    Performs Expectation Maximization for Gaussian Mixture Model
-    Args:
-        - X: np.ndarray (n, d) - data set
+    Performs the expectation maximization for a GMM
+    Arguments:
+        - X: np.ndarray (n, d) data set
             - n: number of data points
             - d: number of dimensions
-        - num_clusters: positive int
-        - number of clusters
-        - iterations: positive int - number of iterations
-        - tolerance: non-negative float - tolerance of log likelihood
-        - verbose: bool - print information
-    Returns:
-        - pi: np.ndarray (num_clusters,) - priors for each cluster
-        - means: np.ndarray (num_clusters, d) - centroid means for each cluster
-        - covariances: np.ndarray (num_clusters, d, d)
-        -covariance matrices for each cluster
-        - probabilities: np.ndarray (num_clusters, n)
-        - probabilities for each data point in each cluster
-        - log_likelihood: float - log likelihood of the model
+        - k: positive int, number of clusters
+        - iterations: positive int, number of iterations
+        - tol: non-negative float, tolerance of log likelihood
+        - verbose: bool for printing information
+    Returns: pi, m, S, g, l, or None, None, None, None, None on failure
+          pi: np.ndarray (k,) of priors for each cluster
+          m: np.ndarray (k, d) of centroid means for each cluster
+          S: np.ndarray (k, d, d) of covariance matrices for each cluster
+          g: np.ndarray (k, n) of probabilities for each data point in each
+          cluster
+          l: log likelihood of the model
     """
     # Input Validation
     if not isinstance(X, np.ndarray) or len(X.shape) != 2:
         return None, None, None, None, None
-    if not isinstance(num_clusters, int) or num_clusters <= 0:
+    if not isinstance(k, int) or k <= 0:
         return None, None, None, None, None
     if not isinstance(iterations, int) or iterations <= 0:
         return None, None, None, None, None
-    if not isinstance(tolerance, float) or tolerance <= 0:
+    if not isinstance(tol, float) or tol <= 0:
         return None, None, None, None, None
     if not isinstance(verbose, bool):
         return None, None, None, None, None
 
     # Initialization
-    priors, means, covariances = initialize(X, num_clusters)
-    probabilities, log_likelihood = expectation(X, priors, means, covariances)
+    pi, m, S = initialize(X, k)
+    g, log_likelihood = expectation(X, pi, m, S)
 
     # Store the previous log likelihood
-    prev_log_likelihood = 0
+    prev_l = 0
 
     # EM iterations
     for i in range(iterations):
-        # Verbose mode: print log likelihood after every 10 iterations
+        # Verbose mode: printing log likelihood after every 10 iterations
         if verbose and i % 10 == 0:
             print('Log Likelihood after {} iterations: {}'.format(
                 i, log_likelihood.round(5)))
-
         # Maximization step
-        priors, means, covariances = maximization(X, probabilities)
-
+        pi, m, S = maximization(X, g)
         # Expectation step
-        probabilities, log_likelihood = expectation(
-            X, priors, means, covariances)
+        g, log_likelihood = expectation(X, pi, m, S)
 
         # Check convergence
-        if np.abs(log_likelihood - prev_log_likelihood) <= tolerance:
+        if np.abs(log_likelihood - prev_l) <= tol:
             break
-
         # Update previous log likelihood
-        prev_log_likelihood = log_likelihood
+        prev_l = log_likelihood
 
     # Final log likelihood
     if verbose:
         print('Log Likelihood after {} iterations: {}'.format(
             i+1, log_likelihood.round(5)))
-
-    return priors, means, covariances, probabilities, log_likelihood
+    return pi, m, S, g, log_likelihood
