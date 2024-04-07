@@ -10,32 +10,31 @@ import numpy as np
 
 def BIC(X, kmin=1, kmax=None, iterations=1000, tol=1e-5, verbose=False):
     """
-    Computes the BIC for a given dataset and range of clusters.
+    Calcule le BIC pour un ensemble de données donné et une plage de clusters.
 
     Args:
-        X (numpy.ndarray): The dataset of shape (n, d).
-        kmin (int): The minimum number of clusters. Default is 1.
-        kmax (int): The maximum number of clusters. If None, it is set to
-        the number of data points in X. Default is None.
-        iterations (int): The maximum number of iterations
-        for the EM algorithm. Default is 1000.
-        tol (float): The tolerance for convergence of the
-        EM algorithm. Default is 1e-5.
-        verbose (bool): If True, prints information about
-        the EM algorithm. Default is False.
+        X (numpy.ndarray): L'ensemble de données de forme (n, d).
+        kmin (int): Le nombre minimum de clusters. Par défaut, 1.
+        kmax (int): Le nombre maximum de clusters. S'il est None, il est défini
+        sur le nombre de points de données dans X. Par défaut, None.
+        iterations (int): Le nombre maximum d'itérations
+        pour l'algorithme EM. Par défaut, 1000.
+        tol (float): La tolérance pour la convergence de l'algorithme EM.
+        Par défaut, 1e-5.
+        verbose (bool): Si True, affiche des informations sur
+        l'algorithme EM. Par défaut, False.
 
     Returns:
-        best_k (int): The number of clusters that minimizes the BIC.
-        best_result (tuple): Optimal values of the parameters
-        (pi, m, S) for the best number of clusters.
-        l (numpy.ndarray): Log-likelihood values
-        for each number of clusters.
-        b (numpy.ndarray): BIC values for each number of clusters.
+        best_k (int): Le nombre de clusters qui minimise le BIC.
+        best_result (tuple): Valeurs optimales des paramètres
+        (pi, m, S) pour le meilleur nombre de clusters.
+        l (numpy.ndarray): Valeurs de log-vraisemblance
+        pour chaque nombre de clusters.
+        b (numpy.ndarray): Valeurs de BIC pour chaque nombre de clusters.
     """
 
-    # Comment explaining the purpose of the function
-    # Compute the Bayesian Information Criterion (BIC)
-    # for a given dataset and range of cluster numbers
+    # Calcule le Critère d'Information Bayésien (BIC)
+    # pour un ensemble de données donné et une plage de nombres de clusters
 
     expectation_maximization = __import__('8-EM').expectation_maximization
 
