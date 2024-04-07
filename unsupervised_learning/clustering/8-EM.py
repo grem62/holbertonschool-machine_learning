@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """ Expectation Maximization for Gaussian Mixture Model """
+
 import numpy as np
-from initialize import initialize
-from expectation import expectation
-from maximization import maximization
+initialize = __import__('4-initialize').initialize
+expectation = __import__('6-expectation').expectation
+maximization = __import__('7-maximization').maximization
 
 
 def expectation_maximization(X,
