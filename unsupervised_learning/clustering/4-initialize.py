@@ -28,7 +28,11 @@ def initialize(X, k):
     if not isinstance(k, int) or k < 1:
         return None, None, None
     n, d = X.shape
-    pi = np.full((k,), 1 / k)
-    m = np.random.uniform(np.min(X, axis=0), np.max(X, axis=0), (k, d))
-    S = np.full((k, d, d), np.identity(d))
-    return pi, m, S
+    # Initialize the priors for each cluster (pi) with equal probability
+    priors = np.full(shape=(k,), fill_value=1/k)
+    # Initialize the mean for each cluster (m) using K-means
+    means = kmeans(X, k)[0]
+    # Initialize the covariance matrices for each cluster
+    # (S) as identity matrices
+    covariances = np.full(shape=(k, d, d), fill_value=np.identity(d))
+    return priors, means, covariances
