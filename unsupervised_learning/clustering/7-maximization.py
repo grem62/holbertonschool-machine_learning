@@ -12,14 +12,21 @@ def maximization(X, g):
     # X: Matrice de données d'entrée de forme (n, d),
     # où n est le nombre d'échantillons et d est le nombre de caractéristiques
     # g: Matrice de forme (k, n) représentant les
-    # probabilités a posteriori de chaque échantillon appartenant à chaque cluster
+    # probabilité a posteriori de chaque échantillon appartenant à chaque clust
+    if len(X.shape) != 2:
+        return None
+    if len(g.shape) != 2:
+        return None
+    if X.shape[0] != g.shape[1]:
+        return None
     n, d = X.shape
     k = g.shape[0]
 
     # Calculer les valeurs mises à jour des coefficients de mélange (pi)
     pi = np.sum(g, axis=1) / n
 
-    # Initialiser les tableaux pour stocker les moyennes (m) et les covariances (S) mises à jour
+    # Initialiser les tableaux pour stocker les
+    # moyennes (m) et les covariances (S) mises à jour
     m = np.zeros((k, d))
     S = np.zeros((k, d, d))
 
@@ -35,5 +42,6 @@ def maximization(X, g):
         # Calculer la matrice de covariance mise à jour pour le cluster i
         S[i] = np.dot(g[i] * diff.T, diff) / np.sum(g[i])
 
-    # Retourner les coefficients de mélange, les moyennes et les covariances mises à jour
+    # Retourner les coefficients de mélange,
+    # les moyennes et les covariances mises à jour
     return pi, m, S
