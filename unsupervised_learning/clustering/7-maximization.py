@@ -1,47 +1,58 @@
 #!/usr/bin/env python3
-"""_summary_
-
-    Returns:
-        _type_: _description_
-"""
+""" Maximization step in the EM algorithm for a GMM """
 
 import numpy as np
 
 
 def maximization(X, g):
-    # X: Matrice de données d'entrée de forme (n, d),
-    # où n est le nombre d'échantillons et d est le nombre de caractéristiques
-    # g: Matrice de forme (k, n) représentant les
-    # probabilité a posteriori de chaque échantillon appartenant à chaque clust
-    if len(X.shape) != 2:
-        return None
-    if len(g.shape) != 2:
-        return None
-    if X.shape[0] != g.shape[1]:
-        return None
+    """
+    Calculates the maximization step in the EM algorithm for a GMM
+        - X: np.ndarray (n, d) data set
+            - n: number of data points
+            - d: number of dimensions
+        - g: np.ndarray (k, n) posterior probs for each data point in each
+            cluster
+    Returns: pi, mu, sigma, or None, None, None on failure
+        - pi: np.ndarray (k,) updated priors for each clusterr
+        - mu: np.ndarray (k, d) updated centroid means for each cluste
+        - sigma: np.ndarray (k, d, d) updated covariance
+        - matrices for each cluster
+    """
+    # Input validation
+    if not isinstance(X, np.ndarray) or len(X.shape) != 2:
+        return None, None, None
+    if not isinstance(g, np.ndarray) or len(g.shape) != 2:
+        return None, None, None
+
+    # Extracting dimensions
     n, d = X.shape
+
+    # Further validation
+    if g.shape[1] != n:
+        return None, None, None
+    # Number of clusters
     k = g.shape[0]
+    if g.shape[0] != k:
+        return None, None, None
+    # Checking if posterior probabilities sum to 1
+    if not np.isclose(np.sum(g, axis=0), 1).all():
+        return None, None, None
 
-    # Calculer les valeurs mises à jour des coefficients de mélange (pi)
-    pi = np.sum(g, axis=1) / n
+    # Calculating updated priors, centroid means, and covariance matrices
+    pi = np.zeros((k,))
+    mu = np.zeros((k, d))
+    sigma = np.zeros((k, d, d))
 
-    # Initialiser les tableaux pour stocker les
-    # moyennes (m) et les covariances (S) mises à jour
-    m = np.zeros((k, d))
-    S = np.zeros((k, d, d))
-
-    # Mettre à jour les moyennes et les covariances pour chaque cluster
     for i in range(k):
-        # Calculer la moyenne mise à jour pour le cluster i
-        m[i] = np.dot(g[i], X) / np.sum(g[i])
+        # Updating priors probabilities
+        pi[i] = np.sum(g[i]) / n
 
-        # Calculer la différence entre chaque échantillon
-        # et la moyenne du cluster i
-        diff = X - m[i]
+        # Updating centroid means
+        mu[i] = np.dot(g[i], X) / np.sum(g[i])
 
-        # Calculer la matrice de covariance mise à jour pour le cluster i
-        S[i] = np.dot(g[i] * diff.T, diff) / np.sum(g[i])
+        # Updating covariance matrices
+        diff = X - mu[i]
+        sigma[i] = np.dot(g[i] * diff.T, diff) / np.sum(g[i])
 
-    # Retourner les coefficients de mélange,
-    # les moyennes et les covariances mises à jour
-    return pi, m, S
+    # Return updated priors, centroid means, and covariance matrices
+    return pi, mu, sigma
