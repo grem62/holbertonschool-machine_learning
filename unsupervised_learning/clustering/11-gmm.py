@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
+"""_summary_
 
-import numpy as np
+    Returns:
+        _type_: _description_
+"""
+
 import sklearn.mixture
 
 
 def gmm(X, k):
+    """Performs GMM on a dataset."""
     gmm_model = sklearn.mixture.GaussianMixture(n_components=k)
     gmm_model.fit(X)
 
