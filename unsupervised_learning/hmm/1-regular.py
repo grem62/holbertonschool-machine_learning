@@ -9,7 +9,7 @@ import numpy as np
 
 
 def regular(P):
-    # Vérifier si P est une matrice carrée
+    """_summary_"""
     n, m = P.shape
     if n != m:
         return None
