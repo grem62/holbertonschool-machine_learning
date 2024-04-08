@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""_summary_
+
+    Returns:
+        _type_: _description_
+"""
 
 import numpy as np
 
