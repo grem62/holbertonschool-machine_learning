@@ -1,7 +1,21 @@
+#!/usr/bin/env python3
+"""_summary_"""
+
 import numpy as np
 
 
 def forward(Observation, Emission, Transition, Initial):
+    """_summary_
+
+    Args:
+        Observation (_type_): _description_
+        Emission (_type_): _description_
+        Transition (_type_): _description_
+        Initial (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     Ob = Observation.shape[0]
     N = Transition.shape[0]
     F = np.zeros((N, Ob))
