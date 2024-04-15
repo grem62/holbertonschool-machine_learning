@@ -20,7 +20,7 @@ class GaussianProcess:
         """
         self.X = X_init
         self.Y = Y_init
-        self.leight = l
+        self.l = l
         self.sigma_f = sigma_f
         self.K = self.kernel(X_init, X_init)
 
@@ -35,4 +35,4 @@ class GaussianProcess:
         Returns:
             numpy.ndarray: Covariance kernel matrix of shape (m, n).
         """
-        return self.sigma_f**2 * np.exp(-0.5 / self.leight**2 * (X1 - X2.T)**2)
+        return self.sigma_f**2 * np.exp(-0.5 / self.l**2 * (X1 - X2.T)**2)
