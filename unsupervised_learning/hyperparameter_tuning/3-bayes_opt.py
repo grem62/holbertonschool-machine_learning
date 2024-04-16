@@ -1,4 +1,4 @@
-#!/usr/bin/env/python3
+#!/usr/bin/env python3
 """Bayesian optimization on a noiseless 1D function"""
 
 import numpy as np
