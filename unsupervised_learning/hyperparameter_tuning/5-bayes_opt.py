@@ -56,4 +56,5 @@ class BayesianOptimization:
             Y_opt = self.gp.X[np.argmax(self.gp.Y)]
             X_opt = [np.max(self.gp.Y)]
         self.gp.X = self.gp.X[:-1]
-        return Y_opt, X_opt
+        X_opt_arrondi = np.round(X_opt, 8)
+        return Y_opt, X_opt_arrondi
