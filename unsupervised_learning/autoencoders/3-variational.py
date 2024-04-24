@@ -54,7 +54,7 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
     decoder = K.models.Model(latent_input, decoder_output, name='decoder')
 
     # Autoencoder
-    autoencoder_output = decoder(encoder(z))
+    autoencoder_output = decoder(encoder(encoder_input)[2])
     autoencoder = K.models.Model(encoder_input, autoencoder_output, name='autoencoder')
 
     # VAE loss
