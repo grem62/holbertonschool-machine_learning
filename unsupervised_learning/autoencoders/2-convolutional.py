@@ -5,40 +5,50 @@ import tensorflow.keras as K
 
 
 def autoencoder(input_dims, filters, latent_dims):
+    """
+    Creates a convolutional autoencoder
+    Arguments:
+        - input_dims is a tuple of integers containing the dimensions of the
+          model input
+        - filters is a list containing the number of filters for each
+          convolutional layer in the encoder, respectively
+            - the filters should be reversed for the decoder
+        - latent_dims is a tuple of integers containing the dimensions of the
+          latent space representation
+    Returns: encoder, decoder, auto
+        - encoder is the encoder model
+        - decoder is the decoder model
+        - auto is the full autoencoder model
+    """
     # Encoder
-    input_img = K.Input(shape=input_dims)
-    encoded = input_img
-    for num_filters in filters:
-        encoded = K.layers.Conv2D(num_filters,
-                                  (3, 3), activation='relu',
-                                  padding='same')(encoded)
-        encoded = K.layers.MaxPooling2D((2, 2),
-                                        padding='same')(encoded)
-
-    # Latent space
-    latent_dims = encoded
+    encoder_input = K.Input(shape=input_dims)
+    enc = encoder_input
+    for f in filters:
+        enc = K.layers.Conv2D(f, (3, 3),
+                              activation='relu',
+                              padding='same')(enc)
+        enc = K.layers.MaxPooling2D((2, 2),
+                                    padding='same')(enc)
+    encoder = K.models.Model(encoder_input, enc)
 
     # Decoder
-    for num_filters in reversed(filters[:-1]):
-        decoded = K.layers.Conv2D(num_filters, (3, 3),
-                                  activation='relu',
-                                  padding='same')(latent_dims)
-        decoded = K.layers.UpSampling2D((2, 2))(decoded)
-
-    decoded = K.layers.Conv2D(filters[-1], (3, 3),
+    decoder_input = K.Input(shape=latent_dims)
+    dec = decoder_input
+    for f in reversed(filters[:-1]):
+        dec = K.layers.Conv2D(f, (3, 3),
                               activation='relu',
-                              padding='valid')(decoded)
-    decoded = K.layers.UpSampling2D((2, 2))(decoded)
-    decoded = K.layers.Conv2D(input_dims[-1], (3, 3),
-                              activation='sigmoid',
-                              padding='same')(decoded)
+                              padding='same')(dec)
+        dec = K.layers.UpSampling2D((2, 2))(dec)
+    dec = K.layers.Conv2D(filters[-1], (3, 3),
+                          activation='relu', padding='valid')(dec)
+    dec = K.layers.UpSampling2D((2, 2))(dec)
+    dec = K.layers.Conv2D(input_dims[-1], (3, 3),
+                          activation='sigmoid', padding='same')(dec)
+    decoder = K.models.Model(decoder_input, dec)
 
-    # Models
-    encoder = K.Model(input_img, latent_dims)
-    decoder = K.Model(latent_dims, decoded)
-    auto = K.Model(input_img, decoder(encoder(input_img)))
+    # Autoencoder
+    auto = K.models.Model(encoder_input, decoder(encoder(encoder_input)))
 
-    # Compile
     auto.compile(optimizer='adam', loss='binary_crossentropy')
 
     return encoder, decoder, auto
