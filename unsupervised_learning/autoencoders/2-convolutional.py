@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" Convolutional Autoencoder """
 
 import tensorflow.keras as K
 
@@ -15,13 +16,13 @@ def autoencoder(input_dims, filters, latent_dims):
                                         padding='same')(encoded)
 
     # Latent space
-    latent = encoded
+    latent_dims = encoded
 
     # Decoder
     for num_filters in reversed(filters[:-1]):
         decoded = K.layers.Conv2D(num_filters, (3, 3),
                                   activation='relu',
-                                  padding='same')(latent)
+                                  padding='same')(latent_dims)
         decoded = K.layers.UpSampling2D((2, 2))(decoded)
 
     decoded = K.layers.Conv2D(filters[-1], (3, 3),
@@ -33,8 +34,8 @@ def autoencoder(input_dims, filters, latent_dims):
                               padding='same')(decoded)
 
     # Models
-    encoder = K.Model(input_img, latent)
-    decoder = K.Model(latent, decoded)
+    encoder = K.Model(input_img, latent_dims)
+    decoder = K.Model(latent_dims, decoded)
     auto = K.Model(input_img, decoder(encoder(input_img)))
 
     # Compile
