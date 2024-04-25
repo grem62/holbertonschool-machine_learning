@@ -39,10 +39,10 @@ def autoencoder(input_dims, filters, latent_dims):
                               activation='relu',
                               padding='same')(dec)
         dec = K.layers.UpSampling2D((2, 2))(dec)
-    dec = K.layers.Conv2D(filters[-1], (3, 3),
+    dec = K.layers.Conv2D(-1, (3, 3),
                           activation='relu', padding='valid')(dec)
     dec = K.layers.UpSampling2D((2, 2))(dec)
-    dec = K.layers.Conv2D(filters[-1], (3, 3),
+    dec = K.layers.Conv2D(1, (3, 3),
                           activation='sigmoid', padding='same')(dec)
     decoder = K.models.Model(decoder_input, dec)
 
