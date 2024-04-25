@@ -3,6 +3,7 @@
 import tensorflow.keras as K
 import tensorflow as tf
 
+
 def sampling(args):
     """
     Function that samples from an isotropic unit Gaussian
@@ -16,6 +17,7 @@ def sampling(args):
     dim = tf.shape(z_mean)[1]
     epsilon = tf.random.normal(shape=(batch, dim))
     return z_mean + tf.exp(0.5 * z_log_var) * epsilon
+
 
 def autoencoder(input_dims, hidden_layers, latent_dims):
     """
@@ -40,25 +42,30 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
     z_log_var = K.layers.Dense(latent_dims, activation=None)(enc_hidden)
 
     # Sampling layer
-    z = K.layers.Lambda(sampling, output_shape=(latent_dims,))([z_mean, z_log_var])
+    z = K.layers.Lambda(sampling,
+                        output_shape=(latent_dims,))([z_mean, z_log_var])
 
-    encoder = K.models.Model(encoder_input, [z_mean, z_log_var, z], name='encoder')
+    encoder = K.models.Model(encoder_input,
+                             [z_mean, z_log_var, z], name='encoder')
 
     # Decoder
     latent_input = K.layers.Input(shape=(latent_dims,))
     dec_hidden = latent_input
     for nodes in reversed(hidden_layers):
         dec_hidden = K.layers.Dense(nodes, activation='relu')(dec_hidden)
-    decoder_output = K.layers.Dense(input_dims, activation='sigmoid')(dec_hidden)
+    decoder_output = K.layers.Dense(input_dims,
+                                    activation='sigmoid')(dec_hidden)
 
     decoder = K.models.Model(latent_input, decoder_output, name='decoder')
 
     # Autoencoder
     autoencoder_output = decoder(encoder(encoder_input)[2])
-    autoencoder = K.models.Model(encoder_input, autoencoder_output, name='autoencoder')
+    autoencoder = K.models.Model(encoder_input,
+                                 autoencoder_output, name='autoencoder')
 
     # VAE loss
-    reconstruction_loss = K.losses.binary_crossentropy(encoder_input, autoencoder_output)
+    reconstruction_loss = K.losses.binary_crossentropy(
+        encoder_input, autoencoder_output)
     reconstruction_loss *= input_dims
     kl_loss = 1 + z_log_var - tf.square(z_mean) - tf.exp(z_log_var)
     kl_loss = tf.reduce_sum(kl_loss, axis=-1)
