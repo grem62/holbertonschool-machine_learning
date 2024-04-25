@@ -36,14 +36,14 @@ def autoencoder(input_dims, filters, latent_dims):
     dec = decoder_input
     for f in reversed(filters[:-1]):
         dec = K.layers.Conv2D(f, (3, 3),
-                              activation='relu',
-                              padding='same')(dec)
+                            activation='relu',
+                            padding='same')(dec)
         dec = K.layers.UpSampling2D((2, 2))(dec)
-    dec = K.layers.Conv2D(-1, (3, 3),
-                          activation='relu', padding='valid')(dec)
+    dec = K.layers.Conv2D(filters[-1], (3, 3),
+                        activation='relu', padding='same')(dec)
     dec = K.layers.UpSampling2D((2, 2))(dec)
-    dec = K.layers.Conv2D(1, (3, 3),
-                          activation='sigmoid', padding='same')(dec)
+    dec = K.layers.Conv2D(1, (3, 3),  # Output 1 channel for grayscale
+                        activation='sigmoid', padding='same')(dec)
     decoder = K.models.Model(decoder_input, dec)
 
     # Autoencoder
