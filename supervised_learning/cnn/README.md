@@ -1,51 +1,45 @@
-# Projet : Convolutions and Pooling
+Voici le README pour le projet "Convolutional Neural Networks" basé sur le document que vous avez fourni :
 
-![Image du projet](https://docs.ecognition.com/v10.0.2/Resources/Images/ECogUsr/UG_CNN_scheme.png)
+```markdown
+# Projet : Convolutional Neural Networks
+
+![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/9/c9d2bd7153ac51f24e52.jpg)
 
 ## 📝 Description
-Le projet "Convolutions and Pooling" introduit les concepts fondamentaux des réseaux de neurones convolutifs (CNN), en se concentrant sur les convolutions et le pooling. Les étudiants apprendront comment les convolutions et les techniques de pooling peuvent être appliquées pour le prétraitement des données d'image avant le training de modèles de deep learning.
+Le projet "Convolutional Neural Networks" se concentre sur l'application des CNN dans la reconnaissance d'images. Les étudiants apprendront à construire, à entraîner et à optimiser les CNN en utilisant TensorFlow et Keras pour diverses tâches de vision par ordinateur.
 
 ## 📚 Ressources
-- [Image Kernels](https://example.com/image_kernels)
-- [Understanding Convolutional Layers](https://example.com/convolutional_layers)
-- [A Comprehensive Guide to Convolutional Neural Networks](https://example.com/cnn_guide)
-- [What is max pooling in convolutional neural networks?](https://example.com/max_pooling)
-- [Edge Detection Examples](https://example.com/edge_detection)
-- [Padding](https://example.com/padding)
-- [Strided Convolutions](https://example.com/strided_convolutions)
-- [Convolutions over Volumes](https://example.com/convolutions_over_volumes)
-- [Pooling Layers](https://example.com/pooling_layers)
-- [Implementing ‘SAME’ and ‘VALID’ padding of Tensorflow in Python](https://example.com/tensorflow_padding)
+- [Convolutional Neural Networks (CNNs) explained](https://example.com/cnn_explained)
+- [The best explanation of Convolutional Neural Networks on the Internet!](https://example.com/best_cnn_explanation)
+- [Machine Learning is Fun! Part 3: Deep Learning and Convolutional Neural Networks](https://example.com/ml_fun_cnn)
+- [Convolutional Neural Networks: The Biologically-Inspired Model](https://example.com/bio_cnn)
+- [Back Propagation in Convolutional Neural Networks — Intuition and Code](https://example.com/backprop_cnn)
 
 ## 🛠️ Technologies et Outils Utilisés
-- **Python** : Langage de programmation principal pour la mise en œuvre des algorithmes.
-- **NumPy** : Utilisé pour le traitement numérique des images.
-- **TensorFlow** : Framework pour la construction et l'entraînement des réseaux de neurones.
+- **TensorFlow 2.6**: Pour construire et entraîner des modèles de deep learning.
+- **Keras**: Interface de haut niveau pour les réseaux de neurones, facilitant la conception de couches convolutives.
 
 ## 📋 Prérequis
 - Python 3.8
+- TensorFlow 2.6
+- Keras
 - NumPy 1.19.2
-- TensorFlow 2.4
 
 ## 🚀 Installation et Configuration
-1. Installez les dépendances nécessaires :
-   ```bash
-   pip install numpy tensorflow
-   ```
-2. Clonez le dépôt GitHub :
-   ```bash
-   git clone https://github.com/yourgithubrepo/convolutions_and_pooling.git
-   ```
-
-## 💡 Utilisation
-Exécutez les scripts pour appliquer les techniques de convolution et de pooling aux images de votre choix.
+Assurez-vous que Python et pip sont installés, puis exécutez:
 ```bash
-try ./ with all main
+pip install tensorflow==2.6 keras numpy==1.19.2
 ```
 
+## 💡 Utilisation
+Exécutez les scripts pour entraîner votre modèle sur un ensemble de données d'images, ajustez les paramètres selon vos besoins.
+
 ## ✨ Fonctionnalités Principales
-- **Convolutions** : Applique des filtres pour extraire des caractéristiques des images.
-- **Pooling** : Réduit les dimensions des caractéristiques tout en préservant les informations importantes.
+- **Reconnaissance d'images** : Utilisation des CNN pour identifier et classifier les images.
+- **Optimisation de modèle** : Techniques d'amélioration de la performance des modèles CNN.
 
 ## 📬 Contact
-- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
+- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
+```
+
+Assurez-vous de remplacer les placeholders par les informations réelles, telles que les liens vers les ressources en ligne ou votre profil LinkedIn. Si vous avez des questions ou avez besoin d'ajustements supplémentaires, faites-le moi savoir !
