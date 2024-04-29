@@ -1,9 +1,6 @@
-Voici le README pour votre projet "Optimization" :
-
-```markdown
 # Projet : Optimization
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/11/2bc924532bc4a901e74d.jpg)
+![Image du projet](https://www.planplusonline.com/wp-content/uploads/2015/08/optimization-7keys.jpg)
 
 ## 📝 Description
 Le projet "Optimization" se concentre sur les techniques avancées d'optimisation utilisées dans le training des réseaux de neurones. Ce projet couvre des sujets tels que la normalisation des données, le gradient stochastique, et divers algorithmes d'optimisation tels que RMSprop et Adam.
@@ -44,7 +41,7 @@ Le projet "Optimization" se concentre sur les techniques avancées d'optimisatio
 ## 💡 Utilisation
 Utilisez les scripts pour entraîner les modèles avec différentes configurations d'optimisation et observez les performances.
 ```bash
-python train.py
+try ./ with all main file
 ```
 
 ## ✨ Fonctionnalités Principales
@@ -53,7 +50,4 @@ python train.py
 - **Batch et Mini-Batch Learning** : Techniques pour améliorer la stabilité et la performance de l'apprentissage.
 
 ## 📬 Contact
-- [LinkedIn Profil](https://www.linkedin.com/in/votreprofil)
-```
-
-Assurez-vous de remplacer "yourgithubrepo" par votre dépôt GitHub réel et "votreprofil" par votre profil LinkedIn. Si vous avez besoin de modifications ou d'ajouts, faites-le moi savoir!
+- [LinkedIn Profil](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
