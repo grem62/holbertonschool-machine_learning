@@ -1,9 +1,6 @@
-Voici le README pour le projet "Convolutions and Pooling" :
-
-```markdown
 # Projet : Convolutions and Pooling
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/11/ed9ca14839ad0201f19e.gif)
+![Image du projet](https://docs.ecognition.com/v10.0.2/Resources/Images/ECogUsr/UG_CNN_scheme.png)
 
 ## 📝 Description
 Le projet "Convolutions and Pooling" introduit les concepts fondamentaux des réseaux de neurones convolutifs (CNN), en se concentrant sur les convolutions et le pooling. Les étudiants apprendront comment les convolutions et les techniques de pooling peuvent être appliquées pour le prétraitement des données d'image avant le training de modèles de deep learning.
@@ -43,7 +40,7 @@ Le projet "Convolutions and Pooling" introduit les concepts fondamentaux des ré
 ## 💡 Utilisation
 Exécutez les scripts pour appliquer les techniques de convolution et de pooling aux images de votre choix.
 ```bash
-python convolve.py
+try ./ with all main
 ```
 
 ## ✨ Fonctionnalités Principales
@@ -51,7 +48,4 @@ python convolve.py
 - **Pooling** : Réduit les dimensions des caractéristiques tout en préservant les informations importantes.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-```
-
-Assurez-vous de remplacer "yourgithubrepo" et les liens vers vos profils et ressources par les informations réelles. N'hésitez pas à ajuster le contenu pour qu'il corresponde mieux à vos besoins spécifiques. Si vous avez besoin d'ajouts ou de modifications, faites-le moi savoir !
+- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
