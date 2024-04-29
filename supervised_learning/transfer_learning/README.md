@@ -1,9 +1,6 @@
-Voici le README pour votre projet "Transfer Learning" :
-
-```markdown
 # Projet : Transfer Learning
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/1/163c04ba1a1523f33173.jpg)
+![Image du projet](https://th.bing.com/th/id/OIP.XA7izspYjaD-tovJahX8OQHaE7?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Ce projet consiste à appliquer le Transfer Learning pour classer le dataset CIFAR 10 à l'aide de modèles pré-entraînés disponibles dans les applications Keras. L'objectif est de comprendre comment utiliser efficacement le transfer learning pour améliorer les performances des modèles de deep learning sur de petites bases de données.
@@ -33,7 +30,7 @@ pip install tensorflow==2.6 keras numpy==1.19.2
 ## 💡 Utilisation
 Exécutez le script Python pour entraîner le modèle sur le dataset CIFAR 10 et évaluer sa performance.
 ```bash
-python 0-transfer.py
+try ./main-0.py
 ```
 
 ## ✨ Fonctionnalités Principales
@@ -41,7 +38,4 @@ python 0-transfer.py
 - **Fine-tuning** : Adaptez les couches finales des modèles pré-entraînés pour les spécificités de nouvelles tâches de classification.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-```
-
-Assurez-vous de remplacer les placeholders par les informations réelles, telles que les liens vers les ressources en ligne ou votre profil LinkedIn. Si vous avez besoin de plus de détails ou d'ajustements, n'hésitez pas à me le faire savoir !
+- Profil LinkedIn : [Gremont Matheo](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
