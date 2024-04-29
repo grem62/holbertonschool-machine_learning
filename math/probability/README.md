@@ -1,6 +1,6 @@
 # Projet : Probability
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/9/f7d69a8ae2b2f71d007b.jpg)
+![Image du projet](https://nameberry.com/_next/image?url=https:%2F%2Fnb-contentful-imgix.imgix.net%2F%2F1nzw6mpfcddc%2FCeNoKxTO3d4EoTO2MotA2%2Fa163811ad8d146346baa84b052b610bd%2Frandom_name_generator.jpeg&w=384&q=75)
 
 ## 📝 Description
 Ce projet vise à introduire les concepts fondamentaux de la probabilité à travers une série de tâches et de défis. Les étudiants explorent des notions telles que les distributions de probabilité, les fonctions de masse de probabilité, et les fonctions de distribution cumulée, en utilisant des outils mathématiques et statistiques.
@@ -42,4 +42,4 @@ python3 simulate_dice.py
 2. **Calcul de probabilités conditionnelles** : Utilisation de formules pour calculer des probabilités conditionnelles et jointes.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
