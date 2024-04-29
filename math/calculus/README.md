@@ -1,6 +1,6 @@
 # Projet : Calculus
 
-![Image du projet](https://link_to_image.com)
+![Image du projet](https://www.askpython.com/wp-content/uploads/2021/01/Calculus-in-Python-1024x512.png)
 
 ## 📝 Description
 Le projet "Calculus" vise à approfondir les connaissances en calcul différentiel et intégral, en explorant les notions de dérivation et d'intégration à travers divers problèmes et défis mathématiques. Les étudiants développeront des compétences en résolution de problèmes mathématiques complexes, essentiels dans le domaine de l'ingénierie et des sciences.
@@ -42,8 +42,5 @@ python3 derivative_calculator.py
 2. **Calcul d'intégrales** : Fournit des outils pour intégrer des fonctions spécifiques, à la fois définies et indéfinies.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
 
-```
-
-N'hésitez pas à modifier ou ajouter d'autres sections selon vos besoins spécifiques pour le projet!
