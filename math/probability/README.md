@@ -1,6 +1,3 @@
-Voici le README pour le projet "Probability" :
-
-```markdown
 # Projet : Probability
 
 ![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/9/f7d69a8ae2b2f71d007b.jpg)
@@ -46,7 +43,3 @@ python3 simulate_dice.py
 
 ## 📬 Contact
 - Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-
-```
-
-Assurez-vous de personnaliser les liens et les informations en fonction de vos besoins spécifiques pour le projet. Si vous avez d'autres sections ou détails à ajouter, faites-le moi savoir !
