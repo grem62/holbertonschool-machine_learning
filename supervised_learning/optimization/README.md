@@ -50,4 +50,4 @@ try ./ with all main file
 - **Batch et Mini-Batch Learning** : Techniques pour améliorer la stabilité et la performance de l'apprentissage.
 
 ## 📬 Contact
-- [LinkedIn Profil](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
+- [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
