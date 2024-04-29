@@ -1,9 +1,6 @@
-Voici le README pour votre projet "Deep Convolutional Architectures" :
-
-```markdown
 # Projet : Deep Convolutional Architectures
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/12/b65616d913a345dcbd8e.jpg)
+![Image du projet](https://th.bing.com/th/id/R.e0e5289c40df67009f47863e1be8757f?rik=ltjbjVtvirPUxg&pid=ImgRaw&r=0)
 
 ## 📝 Description
 Ce projet explore les architectures avancées des réseaux neuronaux convolutionnels (CNN), telles que Inception, ResNet, et DenseNet. Il vise à comprendre comment ces architectures approfondissent la compréhension des données visuelles complexes et améliorent la précision des prédictions dans des tâches de vision par ordinateur.
@@ -34,6 +31,9 @@ pip install tensorflow==2.6 keras numpy==1.19.2
 
 ## 💡 Utilisation
 Exécutez les scripts Python pour former et évaluer les modèles CNN sur des ensembles de données d'images. Ajustez les paramètres selon les besoins spécifiques de votre projet.
+```
+try ./ with all main file
+```
 
 ## ✨ Fonctionnalités Principales
 - **Inception Blocks** : Utilisation de modules d'Inception pour la capture efficace des caractéristiques à différentes échelles.
@@ -41,7 +41,4 @@ Exécutez les scripts Python pour former et évaluer les modèles CNN sur des en
 - **Dense Connectivity** : Implémentation de DenseNet pour améliorer le flux d'informations et la réutilisation des caractéristiques.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-```
-
-Remplacez les liens de ressources et votre profil LinkedIn par vos informations réelles. Si vous avez besoin de plus de détails ou d'ajustements, n'hésitez pas à me le faire savoir !
+- Profil LinkedIn : [Gremont Matheo](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
