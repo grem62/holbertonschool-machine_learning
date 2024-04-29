@@ -34,7 +34,7 @@ Ce projet vise à introduire les concepts fondamentaux de la probabilité à tra
 ## 💡 Utilisation
 Exécutez les scripts pour visualiser les différents calculs de probabilité. Par exemple :
 ```bash
-python3 simulate_dice.py
+try all main with this command ./
 ```
 
 ## ✨ Fonctionnalités Principales
