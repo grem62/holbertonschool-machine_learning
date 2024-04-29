@@ -18,7 +18,7 @@ Le projet "Calculus" vise à approfondir les connaissances en calcul différenti
 
 ## 📋 Prérequis
 - Python 3.9
-- Sympy 1.8
+- numpy 1.8
 - Toutes les dépendances listées dans le fichier `requirements.txt`.
 
 ## 🚀 Installation et Configuration
