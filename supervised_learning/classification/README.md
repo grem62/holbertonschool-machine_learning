@@ -1,6 +1,6 @@
 # Projet : Classification Using Neural Networks
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/10/83672a47323d70a88c5e.jpg)
+![Image du projet](https://th.bing.com/th/id/OIP.YLy4mm9OXss9LEVQFm5xVwHaEU?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Le projet "Classification Using Neural Networks" vise à enseigner les fondements des réseaux de neurones et de la classification binaire. En utilisant la bibliothèque `numpy`, vous allez construire votre propre classificateur d'images binaires à partir de zéro, apprendre les mécanismes de propagation avant et arrière, et comprendre les fonctions d'activation et la descente de gradient.
@@ -42,5 +42,5 @@ Exécutez le script Python pour former le modèle et effectuer des classificatio
 2. **Propagation Avant et Arrière** : Implémentation complète des mécanismes de propagation pour l'entraînement des réseaux de neurones.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
 
