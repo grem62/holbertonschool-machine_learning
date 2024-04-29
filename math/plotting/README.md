@@ -38,7 +38,7 @@ Le projet "Plotting" se concentre sur l'utilisation de Matplotlib pour créer di
 ## 💡 Utilisation
 Exécuter les scripts Python dans le dossier du projet pour visualiser les graphiques. Par exemple :
 ```bash
-python3 0-line.py
+try with main file with ./
 ```
 
 ## ✨ Fonctionnalités Principales
