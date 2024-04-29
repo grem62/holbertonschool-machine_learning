@@ -1,9 +1,6 @@
-Voici le README pour le projet "Convolutional Neural Networks" basé sur le document que vous avez fourni :
-
-```markdown
 # Projet : Convolutional Neural Networks
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/9/c9d2bd7153ac51f24e52.jpg)
+![Image du projet](https://www.researchgate.net/publication/370769504/figure/fig3/AS:11431281158494380@1684156713946/Flowchart-of-the-band-adjustment-process.jpg)
 
 ## 📝 Description
 Le projet "Convolutional Neural Networks" se concentre sur l'application des CNN dans la reconnaissance d'images. Les étudiants apprendront à construire, à entraîner et à optimiser les CNN en utilisant TensorFlow et Keras pour diverses tâches de vision par ordinateur.
@@ -33,13 +30,13 @@ pip install tensorflow==2.6 keras numpy==1.19.2
 
 ## 💡 Utilisation
 Exécutez les scripts pour entraîner votre modèle sur un ensemble de données d'images, ajustez les paramètres selon vos besoins.
-
+```
+try ./ with all main file
+```
 ## ✨ Fonctionnalités Principales
 - **Reconnaissance d'images** : Utilisation des CNN pour identifier et classifier les images.
 - **Optimisation de modèle** : Techniques d'amélioration de la performance des modèles CNN.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-```
-
-Assurez-vous de remplacer les placeholders par les informations réelles, telles que les liens vers les ressources en ligne ou votre profil LinkedIn. Si vous avez des questions ou avez besoin d'ajustements supplémentaires, faites-le moi savoir !
+- Profil LinkedIn : [Gremont Matheo](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
+- 
