@@ -1,9 +1,4 @@
-Voici le README pour le projet "Tensorflow" :
-
-```markdown
-# Projet : Tensorflow
-
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/10/6f157fe3360e5ec1ceb6.jpg)
+![Image du projet](https://specials-images.forbesimg.com/imageserve/5fc09cf1950179a3f5f74874/960x0.jpg?fit=scale)
 
 ## 📝 Description
 Ce projet vise à fournir une compréhension approfondie de TensorFlow, un framework puissant pour le développement de modèles de machine learning. Les participants apprendront à construire, entraîner et déployer des modèles complexes qui peuvent effectuer diverses tâches de machine learning et de deep learning.
@@ -43,7 +38,7 @@ Ce projet vise à fournir une compréhension approfondie de TensorFlow, un frame
 ## 💡 Utilisation
 Exécutez les scripts fournis pour entraîner et tester les modèles. Par exemple :
 ```bash
-python3 train_model.py
+try ./ with all main
 ```
 
 ## ✨ Fonctionnalités Principales
@@ -51,8 +46,4 @@ python3 train_model.py
 - **Visualisation de performances** : Analysez les performances du modèle avec des outils intégrés.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-
-```
-
-Assurez-vous de remplacer les placeholders comme le lien GitHub et les liens LinkedIn par vos informations réelles. Si vous avez des sections spécifiques ou des détails supplémentaires à ajouter, faites-le moi savoir !
+- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
