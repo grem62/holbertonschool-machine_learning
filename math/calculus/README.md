@@ -34,7 +34,7 @@ Le projet "Calculus" vise à approfondir les connaissances en calcul différenti
 ## 💡 Utilisation
 Lancez les scripts Python pour calculer des dérivées ou des intégrales. Par exemple :
 ```bash
-python3 derivative_calculator.py
+try all main with this command ./
 ```
 
 ## ✨ Fonctionnalités Principales
