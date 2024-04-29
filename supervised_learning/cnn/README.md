@@ -48,4 +48,4 @@ try ./ with all main
 - **Pooling** : Réduit les dimensions des caractéristiques tout en préservant les informations importantes.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
