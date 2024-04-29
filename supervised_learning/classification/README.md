@@ -34,7 +34,7 @@ Le projet "Classification Using Neural Networks" vise à enseigner les fondement
 ## 💡 Utilisation
 Exécutez le script Python pour former le modèle et effectuer des classifications. Par exemple :
 ```bash
-python3 train_classifier.py
+./0-main.py or ./8-main.py for exemple
 ```
 
 ## ✨ Fonctionnalités Principales
