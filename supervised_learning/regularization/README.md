@@ -1,9 +1,6 @@
-Voici le README pour le projet "Regularization" basé sur le document que vous avez fourni :
-
-```markdown
 # Projet : Regularization
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/6/689c11afbc30eaa89b50.jpg)
+![Image du projet](https://th.bing.com/th/id/R.42acf259e38c845c245cbe9fbfb3ae24?rik=9oHhpqn7GYXJ1w&pid=ImgRaw&r=0)
 
 ## 📝 Description
 Ce projet explore les techniques de régularisation dans les réseaux de neurones pour combattre le surajustement, notamment la régularisation L2, le dropout et l'arrêt précoce. Il aborde également l'augmentation de données comme méthode de régularisation pour améliorer la généralisation des modèles.
@@ -34,6 +31,9 @@ pip install tensorflow==2.6 numpy==1.19
 
 ## 💡 Utilisation
 Lancez les scripts pour appliquer les techniques de régularisation sur les modèles de réseaux de neurones. Examinez les effets sur la performance et la généralisation du modèle.
+```
+try ./ with all main file
+```
 
 ## ✨ Fonctionnalités Principales
 - **Régularisation L2** : Réduit le surajustement en pénalisant les poids de grande valeur.
@@ -41,7 +41,4 @@ Lancez les scripts pour appliquer les techniques de régularisation sur les mod�
 - **Arrêt Précoce** : Évite le surajustement en arrêtant l'entraînement lorsque la performance sur le jeu de validation cesse de s'améliorer.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-```
-
-Assurez-vous de remplacer les liens fictifs par des liens valides et de personnaliser les détails selon vos spécifications et besoins. Si vous avez des ajustements supplémentaires ou des sections à ajouter, faites-le moi savoir !
+- Profil LinkedIn : [Gremont Matheo](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
