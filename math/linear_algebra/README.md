@@ -1,6 +1,6 @@
 # Projet : Algèbre Linéaire
 
-![Image du projet](https://link_to_image.com)
+![Image du projet](https://i.ytimg.com/vi/0WDhKCPtbng/maxresdefault.jpg)
 
 ## 📝 Description
 Ce projet explore les fondements de l'algèbre linéaire et son application à l'aide de Python et de la bibliothèque numpy. Il couvre les concepts de vecteurs, de matrices, de produits scalaires et de multiplication de matrices. L'objectif est de fournir une compréhension pratique des opérations de base en algèbre linéaire qui sont cruciales pour des domaines avancés tels que l'apprentissage automatique et l'analyse de données.
