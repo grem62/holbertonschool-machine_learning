@@ -1,6 +1,6 @@
 # Projet : Convolutional Neural Networks
 
-![Image du projet](https://www.researchgate.net/publication/370769504/figure/fig3/AS:11431281158494380@1684156713946/Flowchart-of-the-band-adjustment-process.jpg)
+![Image du projet](https://th.bing.com/th/id/OIP.LigVwVMFpgWYC3ciS0fjiwHaE8?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Le projet "Convolutional Neural Networks" se concentre sur l'application des CNN dans la reconnaissance d'images. Les étudiants apprendront à construire, à entraîner et à optimiser les CNN en utilisant TensorFlow et Keras pour diverses tâches de vision par ordinateur.
