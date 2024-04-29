@@ -1,9 +1,6 @@
-Voici le README pour votre projet "Error Analysis" :
-
-```markdown
 # Projet : Error Analysis
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/11/e3786a3d84e36ff800d8.jpg)
+![Image du projet](https://th.bing.com/th/id/OIP.T1A1aQ8ElIurnrv1mvD2fwHaD3?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Ce projet explore l'analyse d'erreurs dans le contexte de l'apprentissage supervisé, en se concentrant sur la compréhension et l'interprétation de la matrice de confusion ainsi que sur l'évaluation de diverses métriques telles que la précision, le rappel (sensibilité), la spécificité, et le score F1. Les participants apprendront à identifier et à corriger les erreurs types I et II et à comprendre l'importance de l'équilibre entre biais et variance.
@@ -41,7 +38,7 @@ cd holbertonschool-machine_learning/supervised_learning/error_analysis
 Utilisez les scripts Python pour générer des matrices de confusion et calculer différentes métriques d'évaluation.
 Exemple d'exécution :
 ```bash
-python3 0-create_confusion.py
+try ./ with all main file
 ```
 
 ## ✨ Fonctionnalités Principales
@@ -49,7 +46,5 @@ python3 0-create_confusion.py
 - **Calcul des métriques** : Mesurez la sensibilité, la précision, la spécificité, et le score F1 pour évaluer la qualité des classifications.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/votreprofil)
-```
+- Profil LinkedIn : [Gremont Matheo](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
 
-Assurez-vous de personnaliser le lien GitHub et votre profil LinkedIn avec vos informations réelles. N'hésitez pas à me faire savoir si vous avez besoin de modifications ou d'ajouts spécifiques!
