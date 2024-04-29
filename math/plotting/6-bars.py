@@ -16,7 +16,8 @@ bar_positions = np.arange(len(persons))
 bottom = np.zeros(len(persons))
 
 for i in range(fruit.shape[0]):
-    ax.bar(bar_positions, fruit[i], bottom=bottom, color=colors[i], label=fruits[i], width=bar_width)
+    ax.bar(bar_positions, fruit[i], bottom=bottom, color=colors[i],
+           label=fruits[i], width=bar_width)
     bottom += fruit[i]
 
 ax.set_ylabel('Quantity of Fruit')
