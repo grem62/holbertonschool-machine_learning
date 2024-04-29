@@ -1,9 +1,6 @@
-Voici le README pour le projet "Plotting" basé sur le document que vous avez fourni :
-
-```markdown
 # Projet : Plotting
 
-![Image du projet](https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2018/9/b4601426ad02130836f9.jpg)
+![Image du projet](https://uploads-ssl.webflow.com/60ec34540d013784844d2ee2/61fe96a4167a66afdd4f679d_Matplotlib%20-%20Bibliotheque%20Python.png)
 
 ## 📝 Description
 Le projet "Plotting" se concentre sur l'utilisation de Matplotlib pour créer divers types de graphiques représentant des données. Les étudiants apprendront à produire des graphiques linéaires, des nuages de points, des histogrammes, et plus encore, en utilisant la bibliothèque Python Matplotlib. Ce projet est essentiel pour ceux qui veulent maîtriser la visualisation de données scientifiques en Python.
@@ -50,5 +47,5 @@ python3 0-line.py
 3. **Histogrammes** : Explorer la distribution des données.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
 
