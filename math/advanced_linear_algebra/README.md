@@ -33,7 +33,7 @@ pip install numpy
 ## 💡 Utilisation
 Exécutez les scripts Python pour calculer des déterminants, des inverses de matrices, etc. Assurez-vous de passer des matrices valides comme arguments.
 ```
-try ./ with script main
+ ./ with script main
 ```
 
 ## ✨ Fonctionnalités Principales
