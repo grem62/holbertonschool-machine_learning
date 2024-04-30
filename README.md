@@ -6,7 +6,7 @@ Ce dépôt est organisé en trois dossiers principaux : Mathématiques pour le M
 
 Ce dossier inclut des ressources sur les mathématiques essentielles au machine learning, telles que la statistique, l'algèbre linéaire, et plus encore.
 
-![Image Mathématiques pour ML](https://i.pinimg.com/originals/81/65/25/8165250f63ae20a41c6a8cc7a530e3f7.jpg)
+![Image Mathématiques pour ML](https://th.bing.com/th/id/R.e5b1ab88fec50f499a22f80224833142?rik=PWxttpMDNAmCdQ&pid=ImgRaw&r=0)
 
 ### Concepts Clés
 - Statistiques
@@ -23,7 +23,7 @@ Ce dossier inclut des ressources sur les mathématiques essentielles au machine 
 
 Ce dossier explore les techniques d'apprentissage supervisé à travers divers modèles et frameworks.
 
-![Image Supervised Learning](https://th.bing.com/th/id/OIP.r3Wx-bsRjNqBShfNm_Pm7wAAAA?rs=1&pid=ImgDetMain)
+![Image Supervised Learning](https://i0.wp.com/techvidvan.com/tutorials/wp-content/uploads/sites/2/2020/07/Supervised-Learning-in-ML-tv.jpg?fit=1200%2C628&ssl=1)
 
 ### Sujets Abordés
 - **Classification** : Techniques de classification.
@@ -66,5 +66,5 @@ Techniques d'apprentissage non supervisé pour l'analyse de données non étique
 
 Pour cloner ce dépôt et explorer ces concepts :
 ’’’
-git clone 
+ git clone https://github.com/grem62/holbertonschool-machine_learning.git
 ’’’
