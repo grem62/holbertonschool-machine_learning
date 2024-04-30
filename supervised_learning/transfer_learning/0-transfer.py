@@ -43,7 +43,7 @@ if __name__ == "__main__":
                                               data_format="channels_last"))(
                                                   input_tensor)
 
-    # Define ResNet152V2 model
+    # Define ResNet50V2 model
     base_model = K.applications.ResNet50V2(
         include_top=False,
         weights="imagenet",

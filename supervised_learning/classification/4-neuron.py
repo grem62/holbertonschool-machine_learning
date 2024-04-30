@@ -90,3 +90,20 @@ class Neuron:
         cost = self.cost(Y, A)
         return np.round(A).astype(int), cost
         """function for evaluate the neuron"""
+
+    def gradient_descent(self, X, Y, A, alpha=0.05):
+        """_summary_
+
+        Args:
+            X (_type_): _description_
+            Y (_type_): _description_
+            A (_type_): _description_
+            alpha (float, optional): _description_. Defaults to 0.05.
+        """
+        m = Y.shape[1]
+        dZ = A - Y
+        dW = (1 / m) * np.matmul(dZ, X.T)
+        db = (1 / m) * np.sum(dZ)
+        self.__W = self.__W - alpha * dW
+        self.__b = self.__b - alpha * db
+        """function for calculate the gradient descent for neuron"""
