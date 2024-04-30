@@ -34,7 +34,7 @@ Le projet "Convolutions and Pooling" introduit les concepts fondamentaux des ré
    ```
 2. Clonez le dépôt GitHub :
    ```bash
-   git clone https://github.com/yourgithubrepo/convolutions_and_pooling.git
+   git clone https://github.com/grem62/convolutions_and_pooling.git
    ```
 
 ## 💡 Utilisation
