@@ -6,13 +6,11 @@
 Ce projet explore les autoencodeurs, une classe de réseaux de neurones utilisée pour l'apprentissage non supervisé. Les objectifs incluent la compréhension des autoencodeurs vanille, des autoencodeurs épars et des autoencodeurs variationnels.
 
 ## 📚 Ressources
-- [Autoencoder - definition](https://lien_vers_la_ressource)
-- [Autoencoder - loss function](https://lien_vers_la_ressource)
-- [Deep learning - deep autoencoder](https://lien_vers_la_ressource)
-- [Introduction to autoencoders](https://lien_vers_la_ressource)
-- [Variational Autoencoders - EXPLAINED!](https://lien_vers_la_ressource)
-- [Intuitively Understanding Variational Autoencoders](https://lien_vers_la_ressource)
-- [Deep Generative Models](https://lien_vers_la_ressource)
+- [Autoencoder - definition](https://cs.stanford.edu/~quocle/tutorial2.pdf) - Un tutoriel approfondi sur les autoencodeurs de l'Université de Stanford.
+- [Autoencoder - loss function](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/DL_lecture8_autoencoder.pdf) - Diapositives de Princeton sur les autoencodeurs, y compris les fonctions de perte utilisées.
+- [Deep learning - deep autoencoder](https://cs.stanford.edu/~quocle/tutorial2.pdf) - Explorez plus en profondeur les autoencodeurs et leur application dans le deep learning, avec des détails sur la configuration des couches cachées et la réduction de dimension.
+- [Introduction to autoencoders](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/DL_lecture8_autoencoder.pdf) - Introduction aux concepts de base des autoencodeurs et à leur utilisation pratique.
+- [Variational Autoencoders - EXPLAINED!](https://www.cs.princeton.edu/courses/archive/spring16/cos495/slides/DL_lecture8_autoencoder.pdf) - Discussion sur les autoencodeurs variationnels et leur comparaison avec les modèles traditionnels.
 
 ## 🛠️ Technologies et Outils Utilisés
 - **Python**: Langage de programmation principal.
