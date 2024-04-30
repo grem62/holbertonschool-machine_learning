@@ -28,7 +28,7 @@ Ce projet vise à fournir une compréhension approfondie de TensorFlow, un frame
 ## 🚀 Installation et Configuration
 1. Clonez le dépôt GitHub :
    ```bash
-   git clone https://github.com/votre_nom_utilisateur/tensorflow_project.git
+   git clone https://github.com/grem62/tensorflow_project.git
    ```
 2. Installez les dépendances nécessaires :
    ```bash
@@ -46,4 +46,4 @@ try ./ with all main
 - **Visualisation de performances** : Analysez les performances du modèle avec des outils intégrés.
 
 ## 📬 Contact
-- Profil LinkedIn : [Votre Nom](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
+- Profil LinkedIn : [Gremont Matheo](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
