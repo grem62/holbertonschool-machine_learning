@@ -1,9 +1,6 @@
-Voici le fichier README pour le projet "Multivariate Probability" :
-
-```markdown
 # Multivariate Probability
 
-![Image du Projet](https://lien_vers_une_image_pertinente_du_projet.jpg)
+![Image du Projet](https://th.bing.com/th/id/OIP.3q7lgAYdlP_Wz_YhD1U-5QHaD5?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Ce projet explore les distributions de probabilité multivariées, en se concentrant sur les distributions gaussiennes multivariées. Il implémente des concepts statistiques avancés tels que la covariance, la corrélation et les matrices de variance-covariance en utilisant la bibliothèque NumPy.
@@ -35,6 +32,9 @@ pip install numpy
 
 ## 💡 Utilisation
 Utilisez les scripts fournis dans le répertoire pour calculer des distributions, tester des corrélation, etc. Veillez à ajuster les entrées selon vos besoins.
+```
+./ with all script main
+```
 
 ## ✨ Fonctionnalités Principales
 1. **Calcul de Covariance** : Permet de calculer la matrice de covariance pour un ensemble de données.
@@ -43,6 +43,3 @@ Utilisez les scripts fournis dans le répertoire pour calculer des distributions
 
 ## 📬 Contact
 - Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont)
-```
-
-Assurez-vous de remplacer les placeholders, notamment les liens des ressources et le lien GitHub, avec des informations précises et pertinentes pour votre projet. Si vous avez besoin d'aide pour compléter certaines sections ou pour toute autre question, n'hésitez pas à demander !
