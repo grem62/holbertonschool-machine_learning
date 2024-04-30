@@ -32,6 +32,9 @@ pip install numpy
 
 ## 💡 Utilisation
 Exécutez les scripts Python pour calculer des déterminants, des inverses de matrices, etc. Assurez-vous de passer des matrices valides comme arguments.
+```
+try ./ with script main
+```
 
 ## ✨ Fonctionnalités Principales
 1. **Calcul du Déterminant** : Permet de calculer le déterminant d'une matrice.
