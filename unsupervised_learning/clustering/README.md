@@ -1,9 +1,6 @@
-Voici le fichier README pour le projet "Clustering" :
-
-```markdown
 # Clustering
 
-![Image du Projet](https://lien_vers_une_image_pertinente_du_projet.jpg)
+![Image du Projet](https://images.squarespace-cdn.com/content/v1/5bce4071ab1a620db382773e/cdd47ecd-18f1-4b98-817d-377d53fb57fb/scikit-learn+clustering.png)
 
 ## 📝 Description
 Ce projet aborde les techniques de clustering, notamment K-means et le clustering hiérarchique. L'objectif est de comprendre et d'appliquer ces méthodes pour segmenter des ensembles de données complexes en groupes ou clusters significatifs.
@@ -37,7 +34,7 @@ Ce projet aborde les techniques de clustering, notamment K-means et le clusterin
 ## 🚀 Installation et Configuration
 Clonez le dépôt GitHub sur votre machine locale :
 ```
-git clone https://github.com/votre_nom_d'utilisateur/clustering.git
+git clone https://github.com/grem62/clustering.git
 ```
 Installez les dépendances nécessaires :
 ```
@@ -46,9 +43,10 @@ pip install numpy scikit-learn scipy
 
 ## 💡 Utilisation
 Utilisez les scripts fournis pour appliquer les algorithmes de clustering à vos ensembles de données. Adaptez les paramètres selon vos besoins pour tester différents scénarios de clustering.
-
-## 📬 Contact
-- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont)
+```
+./ with all main
 ```
 
-Assurez-vous de remplacer les placeholders des liens avec des liens réels vers les ressources mentionnées pour que les utilisateurs puissent facilement accéder aux matériaux d'apprentissage. Si vous avez besoin d'ajustements supplémentaires ou de sections spécifiques, n'hésitez pas à demander !
+
+## 📬 Contact
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
