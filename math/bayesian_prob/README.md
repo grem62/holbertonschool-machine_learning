@@ -6,11 +6,11 @@
 Ce projet est consacré à l'application de la probabilité bayésienne dans le contexte des statistiques et de l'apprentissage machine. Les participants explorent l'utilisation du théorème de Bayes pour interpréter et résoudre des problèmes de probabilité conditionnelle, améliorant ainsi leur compréhension des statistiques inférentielles et des probabilités.
 
 ## 📚 Ressources
-- [Bayesian probability](https://lien_vers_la_ressource)
-- [Bayesian statistics](https://lien_vers_la_ressource)
-- [Bayes’ Theorem - The Simplest Case](https://lien_vers_la_ressource)
-- [A visual guide to Bayesian thinking](https://lien_vers_la_ressource)
-- [Base Rates](https://lien_vers_la_ressource)
+- [Basics of Bayesian Statistics - Carnegie Mellon University](https://www.stat.cmu.edu)
+- [Bayesian Statistics Made Simple - Open Textbook Library](https://open.umn.edu)
+- [Bayesian statistics and modelling - Department of Statistics, Columbia University](https://www.stat.columbia.edu)
+- [Bayesian Inference - Carnegie Mellon University](https://www.stat.cmu.edu)
+- [Bayesian Statistics Course - Johns Hopkins University](https://ep.jhu.edu)
 
 ## 🛠️ Technologies et Outils Utilisés
 - **Python** : Utilisé pour implémenter les méthodes et les calculs statistiques.
