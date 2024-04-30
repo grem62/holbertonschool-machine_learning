@@ -6,11 +6,11 @@
 Ce projet explore les distributions de probabilité multivariées, en se concentrant sur les distributions gaussiennes multivariées. Il implémente des concepts statistiques avancés tels que la covariance, la corrélation et les matrices de variance-covariance en utilisant la bibliothèque NumPy.
 
 ## 📚 Ressources
-- [Joint Probability Distributions](https://www.example.com)
-- [Multivariate Gaussian distributions](https://www.example.com)
-- [The Multivariate Gaussian Distribution](https://www.example.com)
-- [An Introduction to Variance, Covariance & Correlation](https://www.example.com)
-- [Variance-covariance matrix using matrix notation of factor analysis](https://www.example.com)
+- [Multivariate Probability - Stanford University](https://web.stanford.edu)
+- [Chapter 3. Multivariate Distributions - University of Chicago](https://www.stat.uchicago.edu)
+- [Multivariate Probability Distributions - Brown University](https://www.dam.brown.edu)
+- [Multivariate Probability - MIT](https://www.mit.edu)
+- [The Multivariate Gaussian Distribution - Stanford University](https://cs229.stanford.edu)
 
 ## 🛠️ Technologies et Outils Utilisés
 - **Python** : Langage de programmation utilisé pour implémenter et manipuler les modèles statistiques.
