@@ -42,4 +42,4 @@ Utilisez les scripts fournis dans le répertoire pour calculer des distributions
 3. **Gaussian Multivariate Distribution** : Modélisation et simulation de distributions gaussiennes multivariées.
 
 ## 📬 Contact
-- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
