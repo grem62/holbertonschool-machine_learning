@@ -1,9 +1,6 @@
-Merci pour ces informations. Voici la structure de votre fichier README pour le projet "Advanced Linear Algebra". N'hésitez pas à ajuster ou à compléter les informations selon vos besoins :
-
-```markdown
 # Advanced Linear Algebra
 
-![Image du Projet](https://lien_vers_une_image_pertinente_du_projet.jpg)
+![Image du Projet](https://th.bing.com/th/id/OIP.CF5ZIqXwFn4DQLUXHcAg6AHaE8?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Ce projet vise à approfondir les connaissances en algèbre linéaire avancée, couvrant des concepts tels que les déterminants, les matrices inverses, les valeurs propres, et les vecteurs propres. Il est essentiel pour comprendre les opérations matricielles complexes utilisées dans divers domaines tels que le machine learning, l'ingénierie et la physique.
@@ -42,7 +39,7 @@ Exécutez les scripts Python pour calculer des déterminants, des inverses de ma
 3. **Calcul des Valeurs Propres** : Détermination des valeurs propres pour les matrices spécifiées.
 
 ## 📬 Contact
-- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont)
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
 ```
 
 Assurez-vous de remplacer les placeholders des liens vers les ressources et les images par des liens valides et appropriés pour votre projet. Si vous avez besoin d'autres sections ou d'ajustements, faites-le moi savoir !
