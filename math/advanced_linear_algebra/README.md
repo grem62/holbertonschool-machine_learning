@@ -6,11 +6,11 @@
 Ce projet vise à approfondir les connaissances en algèbre linéaire avancée, couvrant des concepts tels que les déterminants, les matrices inverses, les valeurs propres, et les vecteurs propres. Il est essentiel pour comprendre les opérations matricielles complexes utilisées dans divers domaines tels que le machine learning, l'ingénierie et la physique.
 
 ## 📚 Ressources
-- [The determinant | Essence of linear algebra](https://lien_vers_la_ressource)
-- [Determinant of a Matrix](https://lien_vers_la_ressource)
-- [Inverse of a Matrix using Minors, Cofactors and Adjugate](https://lien_vers_la_ressource)
-- [Eigenvalues and eigenvectors](https://lien_vers_la_ressource)
-- [Definiteness of a matrix](https://lien_vers_la_ressource)
+- [Lecture notes on Advanced Linear Algebra - University of Houston](https://www.math.uh.edu)
+- [Math 318 Advanced Linear Algebra: Tools and Applications - University of Washington](https://sites.math.washington.edu)
+- [Lecture Notes for Linear Algebra - MIT Mathematics](https://math.mit.edu)
+- [Advanced Linear Algebra: Foundations to Frontiers - University of Texas at Austin](https://www.cs.utexas.edu)
+- [Advanced Linear Algebra with Applications - Princeton University](https://www.math.princeton.edu)
 
 ## 🛠️ Technologies et Outils Utilisés
 - **Python** : Langage de programmation utilisé pour implémenter les algorithmes de calcul matriciel.
