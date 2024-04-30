@@ -30,7 +30,7 @@ Ce projet explore l'analyse d'erreurs dans le contexte de l'apprentissage superv
 ## 🚀 Installation et Configuration
 Clonez le dépôt GitHub :
 ```bash
-git clone https://github.com/votre_username/holbertonschool-machine_learning.git
+git clone https://github.com/grem62/holbertonschool-machine_learning.git
 cd holbertonschool-machine_learning/supervised_learning/error_analysis
 ```
 
