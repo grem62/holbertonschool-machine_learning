@@ -1,9 +1,6 @@
-Voici le fichier README pour le projet "Dimensionality Reduction", avec les détails nécessaires et des liens vers des ressources externes pour approfondir le sujet :
-
-```markdown
 # Dimensionality Reduction
 
-![Image du Projet](https://lien_vers_une_image_pertinente_du_projet.jpg)
+![Image du Projet](https://th.bing.com/th/id/OIP.Zf840aHT9KOXfhpj_D4STwHaFu?rs=1&pid=ImgDetMain)
 
 ## 📝 Description
 Ce projet se concentre sur les techniques de réduction de dimensionnalité, y compris l'analyse en composantes principales (PCA) et l'incorporation de voisins stochastiques distribués en t (t-SNE). Ces techniques sont essentielles pour simplifier les modèles complexes en machine learning et améliorer les temps de calcul sans perdre significativement en précision.
@@ -28,7 +25,7 @@ Ce projet se concentre sur les techniques de réduction de dimensionnalité, y c
 ## 🚀 Installation et Configuration
 Clonez le dépôt GitHub sur votre machine locale :
 ```
-git clone https://github.com/votre_nom_d'utilisateur/dimensionality_reduction.git
+git clone https://github.com/grem62/dimensionality_reduction.git
 ```
 Installez les dépendances nécessaires :
 ```
@@ -39,7 +36,5 @@ pip install numpy scikit-learn
 Utilisez les scripts fournis pour appliquer PCA et t-SNE à votre ensemble de données. Adaptez les paramètres selon vos besoins pour explorer différentes configurations.
 
 ## 📬 Contact
-- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont)
-```
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
 
-Remplacez les placeholders des liens avec des liens réels vers les ressources mentionnées dans le projet pour que les utilisateurs puissent facilement accéder aux matériaux d'apprentissage. Si vous avez besoin d'ajustements supplémentaires ou de sections spécifiques, n'hésitez pas à demander !
