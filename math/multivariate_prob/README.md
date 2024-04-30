@@ -23,7 +23,7 @@ Ce projet explore les distributions de probabilité multivariées, en se concent
 ## 🚀 Installation et Configuration
 Clonez le dépôt GitHub sur votre machine locale :
 ```
-git clone https://github.com/votre_nom_d'utilisateur/multivariate_probability.git
+git clone https://github.com/grem62/multivariate_probability.git
 ```
 Installez les dépendances nécessaires :
 ```
