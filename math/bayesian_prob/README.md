@@ -1,1 +1,48 @@
-not empty
+Voici le fichier README pour le projet "Bayesian Probability" :
+
+```markdown
+# Bayesian Probability
+
+![Image du Projet](https://lien_vers_une_image_pertinente_du_projet.jpg)
+
+## 📝 Description
+Ce projet est consacré à l'application de la probabilité bayésienne dans le contexte des statistiques et de l'apprentissage machine. Les participants explorent l'utilisation du théorème de Bayes pour interpréter et résoudre des problèmes de probabilité conditionnelle, améliorant ainsi leur compréhension des statistiques inférentielles et des probabilités.
+
+## 📚 Ressources
+- [Bayesian probability](https://lien_vers_la_ressource)
+- [Bayesian statistics](https://lien_vers_la_ressource)
+- [Bayes’ Theorem - The Simplest Case](https://lien_vers_la_ressource)
+- [A visual guide to Bayesian thinking](https://lien_vers_la_ressource)
+- [Base Rates](https://lien_vers_la_ressource)
+
+## 🛠️ Technologies et Outils Utilisés
+- **Python** : Utilisé pour implémenter les méthodes et les calculs statistiques.
+- **NumPy** : Essentiel pour les opérations mathématiques et les simulations statistiques.
+
+## 📋 Prérequis
+- Python 3.5+
+- NumPy 1.15 ou supérieur
+
+## 🚀 Installation et Configuration
+Clonez le dépôt GitHub sur votre machine locale :
+```
+git clone https://github.com/votre_nom_d'utilisateur/bayesian_probability.git
+```
+Installez les dépendances nécessaires :
+```
+pip install numpy
+```
+
+## 💡 Utilisation
+Utilisez les scripts fournis pour calculer les probabilités postérieures, les probabilités marginales, etc., en suivant les exemples de codage fournis dans les fichiers sources.
+
+## ✨ Fonctionnalités Principales
+1. **Théorème de Bayes** : Implémentation du calcul des probabilités postérieures.
+2. **Probabilité Marginale** : Calcul des probabilités marginales à partir des distributions conjointes.
+3. **Inférence Bayésienne** : Utilisation des croyances antérieures pour mettre à jour les probabilités en réponse à de nouvelles données.
+
+## 📬 Contact
+- Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont)
+```
+
+Assurez-vous de remplacer les placeholders, notamment les liens des ressources et le lien GitHub, avec des informations précises et pertinentes pour votre projet. Si vous avez besoin d'aide pour compléter certaines sections ou pour toute autre question, n'hésitez pas à demander !
