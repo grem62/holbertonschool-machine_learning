@@ -40,6 +40,3 @@ Exécutez les scripts Python pour calculer des déterminants, des inverses de ma
 
 ## 📬 Contact
 - Profil LinkedIn : [Matheo Gremont](https://www.linkedin.com/in/matheo-gremont-aa0b41251/)
-```
-
-Assurez-vous de remplacer les placeholders des liens vers les ressources et les images par des liens valides et appropriés pour votre projet. Si vous avez besoin d'autres sections ou d'ajustements, faites-le moi savoir !
