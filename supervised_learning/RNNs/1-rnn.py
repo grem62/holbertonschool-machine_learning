@@ -22,13 +22,14 @@ def rnn(rnn_cell, X, h_0):
         ndarray: Tableau de forme (t, m, o) contenant les sorties pour chaque
                  instant dans la séquence.
     """
-    t, m, i = X.shape
-    m, h = h_0.shape
-    o = rnn_cell.Wy.shape[1]
-    H = np.zeros((t, m, h))
+    t, m, i = np.shape(X)
+    h = np.shape(h_0)[1]
+    o = np.shape(rnn_cell.Wy)[1]
+    H = np.zeros((t + 1, m, h))
     Y = np.zeros((t, m, o))
     H[0] = h_0
-    for timestep in range(t):
-        H[timestep + 1], Y[timestep] = rnn_cell.forward(H[timestep],
-                                                        X[timestep])
-    return H[1:], Y
+    for step in range(t):
+        h_next, y = rnn_cell.forward(H[step], X[step])
+        H[step + 1] = h_next
+        Y[step] = y
+    return H, Y
