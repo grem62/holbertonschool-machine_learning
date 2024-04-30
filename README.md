@@ -66,6 +66,10 @@ Techniques d'apprentissage non supervisé pour l'analyse de données non étique
 
 Pour cloner ce dépôt et explorer ces concepts :
 
-
+```
  git clone https://github.com/grem62/holbertonschool-machine_learning.git
-’’’
+```
+
+## Contact et lien:
+
+linkedin: https://www.linkedin.com/in/matheo-gremont-aa0b41251/
