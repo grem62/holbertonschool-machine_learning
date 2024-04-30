@@ -24,7 +24,7 @@ Ce projet vise à introduire les concepts fondamentaux de la probabilité à tra
 ## 🚀 Installation et Configuration
 1. Clonez le dépôt GitHub :
    ```bash
-   git clone https://github.com/username/probability_project.git
+   git clone https://github.com/grem62/probability_project.git
    ```
 2. Installez les dépendances :
    ```bash
