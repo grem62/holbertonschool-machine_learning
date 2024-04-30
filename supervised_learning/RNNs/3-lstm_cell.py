@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
+"""_summary_
 
+    Returns:
+        _type_: _description_
+"""
 
 import numpy as np
 
 
 class LSTMCell:
+    """_summary_
+    """
     def __init__(self, i, h, o):
         self.Wf = np.random.randn(h + i, h)
         self.Wu = np.random.randn(h + i, h)
@@ -18,6 +24,16 @@ class LSTMCell:
         self.by = np.zeros((1, o))
 
     def forward(self, h_prev, c_prev, x_t):
+        """_summary_
+
+        Args:
+            h_prev (_type_): _description_
+            c_prev (_type_): _description_
+            x_t (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         concat = np.concatenate((h_prev, x_t), axis=1)
         f = np.dot(concat, self.Wf) + self.bf
         f = 1 / (1 + np.exp(-f))
