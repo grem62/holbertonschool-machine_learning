@@ -24,7 +24,7 @@ Le projet "Calculus" vise à approfondir les connaissances en calcul différenti
 ## 🚀 Installation et Configuration
 1. Clonez le dépôt GitHub :
    ```bash
-   git clone https://github.com/username/calculus_project.git
+   git clone https://github.com/grem62/calculus_project.git
    ```
 2. Installez les dépendances :
    ```bash
