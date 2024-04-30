@@ -28,7 +28,7 @@ Le projet "Classification Using Neural Networks" vise à enseigner les fondement
    ```
 2. Clonez le dépôt GitHub :
    ```bash
-   git clone https://github.com/yourgithubrepo/classification_neural_network.git
+   git clone https://github.com/grem62/classification_neural_network.git
    ```
 
 ## 💡 Utilisation
