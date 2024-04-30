@@ -32,7 +32,7 @@ Le projet "Plotting" se concentre sur l'utilisation de Matplotlib pour créer di
    ```
 2. Cloner le dépôt GitHub :
    ```bash
-   git clone https://github.com/yourgithubrepo/plotting_project.git
+   git clone https://github.com/grem62/plotting_project.git
    ```
 
 ## 💡 Utilisation
