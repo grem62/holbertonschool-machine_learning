@@ -35,7 +35,7 @@ Le projet "Optimization" se concentre sur les techniques avancées d'optimisatio
    ```
 2. Clonez le dépôt :
    ```bash
-   git clone https://github.com/yourgithubrepo/optimization_project.git
+   git clone https://github.com/grem62/optimization_project.git
    ```
 
 ## 💡 Utilisation
