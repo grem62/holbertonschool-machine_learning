@@ -1,10 +1,19 @@
+#!/usr/bin/env python3
+
+
 import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 import matplotlib.pyplot as plt
 
-class Simple_GAN(keras.Model) :
-    
+
+class Simple_GAN(keras.Model):
+    """_summary_
+
+    Args:
+        keras (_type_): _description_
+    """
+
     def __init__( self, generator , discriminator , latent_generator, real_examples, batch_size=200, disc_iter=2, learning_rate=.005):
         super().__init__()                         # run the __init__ of keras.Model first. 
         self.latent_generator = latent_generator
@@ -13,30 +22,46 @@ class Simple_GAN(keras.Model) :
         self.discriminator    = discriminator
         self.batch_size       = batch_size
         self.disc_iter        = disc_iter
-        
+
         self.learning_rate    = learning_rate
         self.beta_1=.5                               # standard value, but can be changed if necessary
         self.beta_2=.9                               # standard value, but can be changed if necessary
-        
+
         # define the generator loss and optimizer:
         self.generator.loss      = lambda x : tf.keras.losses.MeanSquaredError()(x, tf.ones(x.shape))
         self.generator.optimizer = keras.optimizers.Adam(learning_rate=self.learning_rate, beta_1=self.beta_1, beta_2=self.beta_2)
         self.generator.compile(optimizer=generator.optimizer , loss=generator.loss )
-        
+
         # define the discriminator loss and optimizer:
         self.discriminator.loss      = lambda x,y : tf.keras.losses.MeanSquaredError()(x, tf.ones(x.shape)) + tf.keras.losses.MeanSquaredError()(y, -1*tf.ones(y.shape))
         self.discriminator.optimizer = keras.optimizers.Adam(learning_rate=self.learning_rate, beta_1=self.beta_1, beta_2=self.beta_2)
         self.discriminator.compile(optimizer=discriminator.optimizer , loss=discriminator.loss )
-       
-    
+
+
     # generator of real samples of size batch_size
     def get_fake_sample(self, size=None, training=False):
+        """_summary_
+        Args:
+            size (_type_, optional): _description_. Defaults to None.
+            training (bool, optional): _description_. Defaults to False.
+
+        Returns:
+            _type_: _description_
+        """
         if not size :
             size= self.batch_size
         return self.generator(self.latent_generator(size), training=training)
 
     # generator of fake samples of size batch_size
     def get_real_sample(self, size=None):
+        """_summary_
+
+        Args:
+            size (_type_, optional): _description_. Defaults to None.
+
+        Returns:
+            _type_: _description_
+        """
         if not size :
             size= self.batch_size
         sorted_indices = tf.range(tf.shape(self.real_examples)[0])
