@@ -1,0 +1,7 @@
+gymnasium==0.28.1
+tensorflow==2.7.0
+keras==2.7.0
+keras-rl2==1.0.5
+protobuf<=3.20.1
+numpy<2.0.0
+ale-py==0.7.4
