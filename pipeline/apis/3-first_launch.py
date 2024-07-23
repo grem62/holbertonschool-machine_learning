@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-
+"""_summary_
+"""
 
 import requests
 
 
 def first_launch():
+    """_summary_
+    """
     launche = 'https://api.spacexdata.com/v4/launches'
     rocket = 'https://api.spacexdata.com/v4/rockets'
     launchpad = 'https://api.spacexdata.com/v4/launchpads'
@@ -15,7 +18,6 @@ def first_launch():
     response = requests.get(launchpad)
     launchpads = response.json()
 
-    # Tri des lancements par date
     sorted_launches = sorted(launches, key=lambda x: x['date_local'])
 
     latest_launch = sorted_launches[0]
