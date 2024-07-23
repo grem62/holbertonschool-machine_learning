@@ -4,6 +4,14 @@ import requests
 
 
 def availableShips(passengerCount):
+    """_summary_
+
+    Args:
+        passengerCount (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     url = 'https://swapi-api.hbtn.io/api/starships'
     params = {'format': 'json'}
     ships = []
