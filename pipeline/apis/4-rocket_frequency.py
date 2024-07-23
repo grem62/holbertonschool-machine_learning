@@ -18,7 +18,7 @@ def rocket_frequency():
         launch_counts[rocket_name] = launch_counts.get(rocket_name, 0) + 1
 
     for rocket_name, count in launch_counts.items():
-        print(f"{rocket_name}: {count}")
+        print("{}: {}".format(rocket_name, count))
 
 if __name__ == '__main__':
     rocket_frequency()
