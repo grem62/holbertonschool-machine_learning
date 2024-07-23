@@ -16,7 +16,6 @@ def rocket_frequency():
         rocket_name = rockets.get(launch["rocket"], "Unknown")
         launch_counts[rocket_name] = launch_counts.get(rocket_name, 0) + 1
 
-    # Sort launch_counts by the number of launches in descending order
     sorted_launch_counts = sorted(launch_counts.items(), key=lambda item: item[1], reverse=True)
 
     for rocket_name, count in sorted_launch_counts:
