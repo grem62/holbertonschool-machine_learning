@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+"""_summary_
+"""
 import requests
 
+
 def rocket_frequency():
-    """
-    Prints the number of launches per rocket.
+    """_summary_
     """
     launches_url = "https://api.spacexdata.com/v4/launches"
     rockets_url = "https://api.spacexdata.com/v4/rockets"
@@ -25,4 +27,6 @@ def rocket_frequency():
     for rocket_name, count in launch_counts.items():
         print(f"{rocket_name}: {count}")
 
-rocket_frequency()
+
+if __name__ == '__main__':
+    rocket_frequency()
