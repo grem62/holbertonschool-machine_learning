@@ -8,7 +8,7 @@ import requests
 def first_launch():
     """_summary_
     """
-    launche = 'https://api.spacexdata.com/v4/launches'
+    launche = 'https://api.spacexdata.com/v4/launches/upcoming'
     rocket = 'https://api.spacexdata.com/v4/rockets'
     launchpad = 'https://api.spacexdata.com/v4/launchpads'
     response = requests.get(launche)
