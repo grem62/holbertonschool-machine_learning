@@ -4,13 +4,15 @@
 
 import requests
 
+
 def rocket_frequency():
     """_summary_
     """
     launches_url = "https://api.spacexdata.com/v4/launches"
     rockets_url = "https://api.spacexdata.com/v4/rockets"
     launches = requests.get(launches_url).json()
-    rockets = {rocket["id"]: rocket["name"] for rocket in requests.get(rockets_url).json()}
+    rockets = {rocket["id"]: rocket["name"] for rocket in requests.get(
+        rockets_url).json()}
     launch_counts = {}
 
     for launch in launches:
@@ -19,6 +21,7 @@ def rocket_frequency():
 
     for rocket_name, count in launch_counts.items():
         print("{}: {}".format(rocket_name, count))
+
 
 if __name__ == '__main__':
     rocket_frequency()
