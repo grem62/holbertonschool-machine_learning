@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" Unigram BLEU score """
 
 from collections import Counter
 import numpy as np
