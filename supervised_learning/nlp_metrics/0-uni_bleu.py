@@ -6,6 +6,7 @@ import tensorflow as tf
 
 
 def uni_bleu(references, sentence):
+    """calculates the unigram BLEU score for a sentence"""
 
     # Count the words in the sentence
     sentence_counts = Counter(sentence)
